@@ -1,0 +1,8 @@
+env
+.idea
+__pycache__
+.envignore
+.env/pyvenv.cfg
+build
+dist
+*.pyc
