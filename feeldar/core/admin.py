@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Content, Emotion, ContentEmotion
 
-# Register your models here.
+admin.site.register(Content)
+admin.site.register(Emotion)
+admin.site.register(ContentEmotion)
