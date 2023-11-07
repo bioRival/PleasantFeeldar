@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список видео с эмоциями</title>
+</head>
+<body>
+    <h1>Список видео с количеством эмоций и их наименованием</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Видео</th>
+                <th>Количество эмоций</th>
+                <th>Наименование эмоции</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for video in videos %}
+            <tr>
+                <td><a href="{% url 'video_details' video.id %}">{{ video.title }}</a></td>
+                <td>{{ video.emotion_count }}</td>
+                <td>
+                    {% for emotion in video.contentemotion_set.all %}
+                        {{ emotion.emotion.name }}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+

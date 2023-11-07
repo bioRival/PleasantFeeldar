@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выберите эмоцию</title>
+</head>
+<body>
+    <h1>Выберите эмоцию для видео "{{ video.title }}"</h1>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            {% for emotion in emotions %}
+                <li>
+                    <input type="radio" name="emotion_id" value="{{ emotion.id }}"> {{ emotion.name }}
+                </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Выбрать">
+    </form>
+</body>
+</html>

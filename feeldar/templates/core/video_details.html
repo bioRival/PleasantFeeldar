@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Детали видео</title>
+</head>
+<body>
+    <h1>Детали видео</h1>
+
+    <h2>{{ video.title }}</h2>
+    <p>{{ video.description }}</p>
+
+    <h3>Самая часто выбираемая эмоция для этого видео:</h3>
+    <p>{{ most_common_emotion }}</p>
+
+    <a href="{% url 'select_video' %}">Вернуться к выбору видео</a>
+
+    <a href="{% url 'video_list' %}">Список видео с эмоциями</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Выберите видео</title>
+</head>
+<body>
+    <h1>Выберите видео</h1>
+    <ul>
+        {% for video in videos %}
+            <li>
+                <strong>{{ video.title }}</strong><br>
+                URL: <a href="{{ video.url }}" target="_blank">{{ video.url }}</a><br>
+                <a href="{% url 'select_emotion' video.id %}">Выбрать эмоцию</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

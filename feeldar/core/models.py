@@ -11,7 +11,13 @@ class Content(models.Model):
         return self.title
 
 class Emotion(models.Model):
-    name = models.CharField(max_length=50) # имя эмоции
+    EMOTIONS = (
+        ('Interesting', 'Интересно'),
+        ('sad', 'Грустно'),
+        ('funny', 'Смешно'),
+        ('excited', 'Восторженно'),
+    )
+    name = models.CharField(max_length=50, choices=EMOTIONS) # имя эмоции
 
     def __str__(self):
         return self.name
