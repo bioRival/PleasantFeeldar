@@ -5,6 +5,11 @@
 </head>
 <body>
     <h1>Выберите видео</h1>
+    {% if user.is_authenticated %}
+        <p>Вы вошли как: {{ user.username }} (<a href="{% url 'logout' %}">Выйти</a>)</p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Войти</a></p>
+    {% endif %}
     <ul>
         {% for video in videos %}
             <li>
