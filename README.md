@@ -39,12 +39,12 @@ python manage.py migrate
 ## потом выполнить команду(для ОС Linux/Mac):
 ```python
 export DJANGO_SETTINGS_MODULE=feeldar.settings
-python script/load_data.py
+python load_data.py
 ```
 ## Для Windows:
 ```python
 set DJANGO_SETTINGS_MODULE=feeldar.settings
-python script/load_data.py
+python load_data.py
 ```
 
 ## эта команда запустит скрипт, который заполнит базу данных вопросами и ответами к викторине
