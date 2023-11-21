@@ -1,0 +1,17 @@
+{% block content %}
+  <h2>Вопрос</h2>
+  <p>{{ question.text }}</p>
+  <form action="{% url 'next_question' question.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend>{{ question.text }}</legend>
+      {% for answer in question.answer_set.all %}
+        <label>
+          <input type="radio" name="answer" value="{{ answer.id }}">
+          {{ answer.text }}
+        </label><br>
+      {% endfor %}
+    </fieldset>
+    <button type="submit">Проверить ответ</button>
+  </form>
+{% endblock %}
