@@ -8,3 +8,4 @@ urlpatterns = [
     path('', anonymous_box, name='anonymous_box'),
     path('list_boxes/', list_boxes, name='list_boxes'),
 ]
+
