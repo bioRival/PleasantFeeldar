@@ -1,0 +1,6 @@
+<h3>Сообщения:</h3>
+<ul>
+    {% for text in texts %}
+        <li>{{ text.text }} - {{ text.created_at }}</li>
+    {% endfor %}
+</ul>

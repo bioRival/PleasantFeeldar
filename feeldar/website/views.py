@@ -1,6 +1,9 @@
 # views.py
 from django.shortcuts import render, redirect
-from .models import Question, Answer
+
+from .forms import AnonymousTextForm
+from .models import Question, Answer, AnonymousText, QuizResult
+
 
 def quiz(request, question_id=None):
     if question_id is None:
@@ -34,3 +37,32 @@ def quiz(request, question_id=None):
                        'percentage_correct': percentage_correct})
 
     return render(request, 'website/quiz.html', {'question': next_question})
+
+
+def quiz_results(request):
+    total_results = QuizResult.objects.count()
+    incorrect_results = QuizResult.objects.filter(is_correct=False).count()
+    percentage_incorrect = (incorrect_results / total_results) * 100 if total_results > 0 else 0
+
+    context = {
+        'total_results': total_results,
+        'incorrect_results': incorrect_results,
+        'percentage_incorrect': percentage_incorrect,
+    }
+
+    return render(request, 'website/quiz_results.html', context)
+
+def anonymous_box(request):
+    if request.method == 'POST':
+        form = AnonymousTextForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('anonymous_box')
+    else:
+        form = AnonymousTextForm()
+
+    return render(request, 'website/box/anonymous_box.html', {'form': form})
+
+def list_boxes(request):
+    texts = AnonymousText.objects.all()
+    return render(request, 'website/box/list_boxes.html', {'texts': texts})
