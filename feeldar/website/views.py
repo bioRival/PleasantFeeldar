@@ -1,6 +1,5 @@
-# views.py
 from django.shortcuts import render, redirect
-
+import random
 from .forms import AnonymousTextForm
 from .models import Question, Answer, AnonymousText, QuizResult
 
@@ -61,7 +60,11 @@ def anonymous_box(request):
     else:
         form = AnonymousTextForm()
 
-    return render(request, 'website/box/anonymous_box.html', {'form': form})
+        all_texts = list(AnonymousText.objects.all())
+        random_texts = random.sample(all_texts, min(3, len(all_texts)))
+
+    return render(request, 'website/box/anonymous_box.html', {'form': form, 'texts': random_texts})
+
 
 def list_boxes(request):
     texts = AnonymousText.objects.all()
