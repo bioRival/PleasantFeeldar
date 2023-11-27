@@ -1,0 +1,7 @@
+
+
+{% block content %}
+  <h2>Обратная связь</h2>
+  <p>{{ feedback }}</p>
+  <a href="{% url 'next_question' question.id %}">Следующий вопрос</a>
+{% endblock %}

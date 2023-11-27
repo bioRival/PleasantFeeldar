@@ -1,0 +1,41 @@
+<h2>Анонимный бокс</h2>
+
+<div style="display: flex; justify-content: space-between;">
+    <div style="width: 45%;"> <!-- Левая часть: Поля ввода -->
+        <form method="post" action="{% url 'anonymous_box' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <div style="width: 45%;"> <!-- Правая часть: Список сообщений -->
+        <h3>Сообщения:</h3>
+        <ul id="messages-list">
+            {% for text in texts %}
+                <li>
+                    {{ text.text }} -
+                    <span class="timestamp" data-time="{{ text.created_at|date:'U' }}">{{ text.created_at|date:'Y-m-d H:i:s' }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'list_boxes' %}">Хочу еще!</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var timestamps = document.getElementsByClassName('timestamp');
+        Array.from(timestamps).forEach(function (element) {
+            var timestampSeconds = parseInt(element.dataset.time, 10);
+            var timestamp = new Date(timestampSeconds * 1000);
+            var options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+            if (!isNaN(timestamp.getTime())) {
+                element.textContent = new Intl.DateTimeFormat('default', options).format(timestamp);
+            } else {
+                element.textContent = 'Invalid Date';
+            }
+        });
+    });
+</script>

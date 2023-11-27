@@ -1,0 +1,9 @@
+
+
+{% block content %}
+  <h2>Результаты викторины</h2>
+  <p>Правильных ответов: {{ correct_answers }} из {{ total_questions }}</p>
+  <p>Процент правильных ответов: {{ percentage_correct }}%</p>
+  <a href="{% url 'quiz' %}">Начать заново</a>
+  <a href="home">Перейти на главную страницу</a>
+{% endblock %}
