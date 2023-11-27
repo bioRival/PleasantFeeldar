@@ -1,0 +1,1533 @@
+/* import fonts from fonts css file */
+@import url(../css/fonts.css);
+
+/* css variables */
+@import url(../css/partials/variables.css);
+
+/* global style */
+@import url(../css/partials/global.css);
+
+
+
+
+
+
+/* MAIN PAGE */
+/* ========================================================================= */
+/* ========================================================================= */
+/* ========================================================================= */
+
+/* Navigation Area */
+/* ========================================================================= */
+.header-area .main-menu {
+    background-color: #EE61D6;
+
+    height: 8.8rem;
+}
+
+.header-area .main-menu .menu-title {
+    position: absolute;
+    
+}
+
+.header-area .main-menu .menu-title .pleasant-title {
+    position: absolute;
+    display: inline-block;
+    top: 0rem; left: -.5rem;
+    z-index: 0;
+    margin-top: -.1rem;
+
+    height: 8.9rem;
+    overflow: hidden;
+
+    /* background-color: green; */
+    
+}
+
+.header-area .main-menu .menu-title .pleasant-title h1 {
+    color: #D22E12;
+    text-align: center;
+    font-family: Monument Extended;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 9.5rem;
+    text-transform: uppercase;
+    user-select: none;
+
+    transform: scale(1, 1.75);
+}
+
+.header-area .main-menu .menu-title .ildar-title {
+    position: absolute;
+    top: 1.6rem; left: 55rem;
+
+    overflow: hidden;
+}
+
+.header-area .main-menu .menu-title .ildar-title h1 {
+    color: rgba(255, 255, 255, 0.25);
+    text-align: center;
+    font-family: Monument Extended;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.header-area .main-menu .menu-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.header-area .main-menu .menu-container .navbar {
+    display: flex;
+    padding: 5rem 1rem 1rem 17rem;
+    justify-content: space-between;
+    vertical-align: top;
+    flex-wrap: nowrap;
+
+}
+
+.header-area .main-menu .menu-container .navbar .navbar-nav .nav-item {
+    padding: 0 .5rem;
+}
+
+.header-area .main-menu .menu-container .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 1.5rem;
+
+    color: #FFF;
+    font-family: Druk Cyr;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    text-wrap: nowrap;
+}
+
+.header-area .main-menu .menu-container .navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #050505;
+    background-color: #FAED5B;
+}
+
+.header-area .main-menu .menu-container .navbar .navbar-nav .nav-item.active .nav-link {
+    color: #050505;
+    background-color: #FAED5B;
+    text-decoration: underline;
+}
+
+.header-area .main-menu .menu-container .side-menu {
+    display: inline-flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    padding-right: 4rem;
+    padding-top: 5.5rem;
+
+    color: black;
+    font-size: 2rem;
+}
+
+.header-area .main-menu .menu-container .side-menu a {
+    padding: 0 .8rem 0 .8rem;
+
+    /* transition: color .5s ease; */
+}
+
+.header-area .main-menu .menu-container .side-menu a:hover {
+    color: #fff;
+}
+/* ========================================================================= */
+/* End Navigation Area */
+
+
+
+/* Faces Area */
+/* ========================================================================= */
+.site-main .faces-area {
+    /* min-height: 50rem; */
+}
+
+.site-main .faces-area .faces-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+
+    background-color: var(--gray-color);
+}
+
+.site-main .faces-area .faces-list .face-item {
+    width: 210px;
+    height: 200px;
+    background-image: url(../img/faces/face-default.png);
+    background-size: 100%;
+    
+    border: 2px solid var(--black-color);
+    /* transition: background .3s ease; */
+}
+
+.site-main .faces-area .faces-list #face01:hover {
+    background-image: url(../img/faces/face01.gif);
+}
+
+.site-main .faces-area .faces-list #face02:hover {
+    background-image: url(../img/faces/face02.gif);
+}
+
+.site-main .faces-area .faces-list #face03:hover {
+    background-image: url(../img/faces/face03.gif);
+}
+
+.site-main .faces-area .faces-list #face04:hover {
+    background-image: url(../img/faces/face04.gif);
+}
+
+.site-main .faces-area .faces-list #face05:hover {
+    background-image: url(../img/faces/face05.gif);
+}
+
+.site-main .faces-area .faces-list #face06:hover {
+    background-image: url(../img/faces/face06.gif);
+}
+
+.site-main .faces-area .faces-list #face07:hover {
+    background-image: url(../img/faces/face07.gif);
+}
+
+.site-main .faces-area .faces-list #face08:hover {
+    background-image: url(../img/faces/face08.gif);
+}
+
+.site-main .faces-area .faces-list #face09:hover {
+    background-image: url(../img/faces/face09.gif);
+}
+
+.site-main .faces-area .faces-list #face10:hover {
+    background-image: url(../img/faces/face10.gif);
+}
+
+.site-main .faces-area .faces-list #face11:hover {
+    background-image: url(../img/faces/face11.gif);
+}
+
+.site-main .faces-area .faces-list #face12:hover {
+    background-image: url(../img/faces/face12.gif);
+}
+
+.site-main .faces-area .faces-list #face13:hover {
+    background-image: url(../img/faces/face13.gif);
+}
+
+.site-main .faces-area .faces-list #face14:hover {
+    background-image: url(../img/faces/face14.gif);
+}
+
+.site-main .faces-area .faces-list #face15:hover {
+    background-image: url(../img/faces/face15.gif);
+}
+
+.site-main .faces-area .faces-list #face16:hover {
+    background-image: url(../img/faces/face16.gif);
+}
+
+.site-main .faces-area .faces-list #face17:hover {
+    background-image: url(../img/faces/face17.gif);
+}
+
+.site-main .faces-area .faces-list #face18:hover {
+    background-image: url(../img/faces/face18.gif);
+}
+
+/* ========================================================================= */
+/* End Faces Area */
+
+
+
+/* Hello Area */
+/* ========================================================================= */
+.site-main .hello-area .hello-con {
+    text-align: right;
+
+    background-color: var(--black-color);
+}
+
+.site-main .hello-area .hello-con .hello-wrapper {
+    display: inline-block;
+    position: relative;
+    padding-top: .5rem;
+    padding-right: 1.2rem;
+}
+
+.site-main .hello-area .hello-con .hello-wrapper .pink-smile {
+    display: block;
+    position: absolute;
+
+    top: 7rem; left: -10rem;
+
+    width: 14.625rem;
+    height: 14.75rem;
+    background-image: url(../img/pink-smile.png);
+}
+
+.site-main .hello-area .hello-con .quote-container {
+    padding: 3.3rem 0;
+}
+
+.site-main .hello-area .hello-con .quote-container .quote-angles {
+    color: white;
+}
+
+.site-main .hello-area .hello-con .quote-container .quote-text {
+    width: 20rem;
+    color: var(--pink-color);
+}
+/* ========================================================================= */
+/* End Hello Area */
+
+
+/* Mood Banner Area */
+/* ========================================================================= */
+.site-main .mood-banner-area {
+    background-color: var(--red-color);
+}
+
+.site-main .mood-banner-area .quote-container {
+    padding: 0 1.8rem 1.5rem 0;
+}
+
+.site-main .mood-banner-area .quote-container .quote-text {
+    color: white;
+}
+
+.site-main .mood-banner-area .quote-container .quote-text {
+    width: 28rem;
+    color: var(--black-color);
+}
+/* ========================================================================= */
+/* End Mood Banner Area */
+
+
+/* Chat-bot Area */
+/* ========================================================================= */
+
+/* Mood Pick sub-area */
+/* ========================== */
+.site-main .chat-bot-area .emotion-pick-container {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 15rem;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button {
+    position: relative;
+    z-index: 2;
+
+    width: 7rem;
+    height: 7rem;
+
+    cursor: pointer;
+    
+    background-color: var(--red-color);
+    border-radius: 50%;
+
+    transition: background 1s ease;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button img {
+    transition: transform .5s ease;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button:hover {
+    background-color: var(--black-color);
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button:hover img {
+    transform: scale(0.8);
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button::before {
+    content: attr(tooltip);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    padding: 3px 10px;
+    opacity: 0;
+    pointer-events: auto;
+    background: #fff;
+    
+    color: black;
+    text-align: center;
+    font-family: Futura PT Cond;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: all 0.3s ease-out;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 0;
+    opacity: 0;
+    background: #fff;
+    transform: rotate(45deg);
+    left: 20%;
+    z-index: -2;
+    transition: 
+    all 0.3s ease-out;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button:hover::before {
+    top: -45px;
+    opacity: 1;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button:hover::after {
+    top: -12px;
+    opacity: 1;
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button.active {
+    background-color: var(--black-color);
+}
+
+.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item
+.emotion-pick-button.active img {
+    transform: scale(0.8);
+}
+/* ========================== */
+/* End Mood Pick subarea */
+
+/* Chat Bot Introduction subarea */
+/* ========================== */
+.site-main .chat-bot-area .chat-bot-intro {
+    padding-top: 3rem;
+    height: 57.8rem;
+
+    background-color: var(--red-color);
+}
+
+.site-main .chat-bot-area .chat-bot-intro .top-banner-container {
+    width: 61rem;
+    background-color: var(--pink-color);
+}
+
+.site-main .chat-bot-area .chat-bot-intro .top-banner-container .top-banner-text-con {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 58rem;
+    margin-top: -10rem;
+    margin-bottom: 10rem;
+
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.125rem; /* 104.167% */
+    text-transform: uppercase;
+}
+
+.site-main .chat-bot-area .chat-bot-intro .top-banner-container .top-banner-text-con 
+.top-banner-text-yellow {
+    flex: 1;
+    padding: .3rem 1rem;
+
+    text-align: right;
+    color: var(--black-color);
+
+    background-color: var(--yellow-color);
+}
+
+.site-main .chat-bot-area .chat-bot-intro .top-banner-container .top-banner-text-con 
+.top-banner-text-red {
+    flex: 2;
+    padding: .3rem 1rem;
+
+    text-align: left;
+    color: var(--white-color);
+
+    background-color: var(--red-color);
+}
+
+.site-main .chat-bot-area .chat-bot-intro .top-banner-container
+.tob-banner-sub-text {
+    padding: 2rem 0 3.5rem 5.2rem;
+    background-color: green;
+
+    color: var(--white-color);
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.125rem; /* 104.167% */
+
+    transform: rotate(-3deg);
+}
+
+.site-main .chat-bot-area .chat-bot-intro .top-banner-container
+.tob-banner-sub-text span {
+    color: var(--black-color);
+    font-family: var(--danger);
+    letter-spacing: 0.21rem;
+}
+
+
+/* ========================== */
+/* End Chat Bot Introduction subarea */
+
+/* ========================================================================= */
+/* End Chat-bot Area */
+
+
+/* Games List Area */
+/* ========================================================================= */
+
+/* ========================================================================= */
+/* End Games List Area */
+
+
+
+
+/* Footer Area */
+/* ========================================================================= */
+.footer-area {
+    background-color: #000;
+    min-height: 10rem;
+}
+
+.footer-area .youtube-link {
+    box-sizing: border-box;
+    border-radius: 50%;
+
+    height: 15.5rem;
+    width: 15.5rem;
+
+    text-align: center;
+    line-height: 15.5rem;
+    font-size: 4rem;
+    color: white;
+
+    background: url(../img/5-rings/5-rings-green.png) no-repeat;
+    background-size: 100%;
+
+    
+}
+
+.footer-area .youtube-link i {
+    transform: rotate(-16.717deg);
+}
+
+.footer-area .vk-link {
+    border-radius: 50%;
+
+    height: 9.4rem;
+    width: 9.4rem;
+    margin-left: 50%;
+
+    text-align: center;
+    line-height: 9.0rem;
+    font-size: 4rem;
+    color: white;
+
+    background: url(../img/5-rings/5-rings-yellow.png) no-repeat;
+    background-size: 100%;
+}
+
+.footer-area .vk-link i {
+    transform: rotate(18.6deg);
+}
+
+.footer-area .wildberries-link {
+    border-radius: 50%;
+
+    height: 8.6rem;
+    width: 8.6rem;
+    margin-top: 19rem;
+    margin-left: 5%;
+
+    text-align: center;
+    line-height: 8.6rem;
+    font-size: 3rem;
+    color: white;
+
+    background: url(../img/5-rings/5-rings-purple.png) no-repeat;
+    background-size: 100%;
+}
+
+.footer-area .wildberries-link .wildberries-icon {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+
+    transform: rotate(-22.014deg);
+}
+
+.footer-area .instagram-link {
+    border-radius: 50%;
+
+    height: 10.2rem;
+    width: 10.2rem;
+    margin-top: 2rem;
+    margin-left: 20%;
+
+    text-align: center;
+    line-height: 10rem;
+    font-size: 4rem;
+    color: white;
+
+    background: url(../img/5-rings/5-rings-blue.png) no-repeat;
+    background-size: 100%;
+}
+
+.footer-area .telegram-link {
+    border-radius: 50%;
+
+    height: 8.6rem;
+    width: 8.6rem;
+    margin-top: 10rem;
+    margin-left: 30%;
+
+    text-align: center;
+    line-height: 8.3rem;
+    font-size: 4rem;
+    color: white;
+
+    background: url(../img/5-rings/5-rings-red.png) no-repeat;
+    background-size: 100%;
+}
+
+.footer-area .twitter-link {
+    border-radius: 50%;
+
+    height: 11.5rem;
+    width: 11.5rem;
+    margin-top: 0rem;
+    margin-left: 60%;
+
+    text-align: center;
+    line-height: 11rem;
+    font-size: 4rem;
+    color: white;
+
+    background: url(../img/5-rings/5-rings-purple.png) no-repeat;
+    background-size: 100%;
+}
+
+.pulse-green:hover {
+    animation: pulse-green 1.5s infinite;
+}
+
+.pulse-yellow:hover {
+    animation: pulse-yellow 1.5s infinite;
+}
+
+.pulse-blue:hover {
+    animation: pulse-blue 1.5s infinite;
+}
+
+.pulse-red:hover {
+    animation: pulse-red 1.5s infinite;
+}
+
+.pulse-purple:hover {
+    animation: pulse-purple 1.5s infinite;
+}
+
+@keyframes pulse-green {
+	0% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 0px rgba(139, 255, 72, 0.2);
+	}
+	
+	70% {
+		transform: scale(1.2);
+	}
+	
+	100% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 20px rgba(139, 255, 72, 0);
+	}
+}
+
+@keyframes pulse-yellow {
+	0% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 0px rgba(255, 247, 0, 0.2);
+	}
+	
+	70% {
+		transform: scale(1.2);
+	}
+	
+	100% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 20px rgba(255, 247, 0, 0);
+	}
+}
+
+@keyframes pulse-blue {
+	0% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 0px rgba(51, 80, 243, 0.2);
+	}
+	
+	70% {
+		transform: scale(1.2);
+	}
+	
+	100% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 20px rgba(51, 80, 243, 0);
+	}
+}
+
+@keyframes pulse-red {
+	0% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 0px rgba(234, 2, 2, 0.2);
+	}
+	
+	70% {
+		transform: scale(1.2);
+	}
+	
+	100% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 20px rgba(234, 2, 2, 0);
+	}
+}
+
+@keyframes pulse-purple {
+	0% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 0px rgba(197, 59, 174, 0.2);
+	}
+	
+	70% {
+		transform: scale(1.2);
+	}
+	
+	100% {
+		transform: scale(1.0);
+        box-shadow: 0 0 0 20px rgba(197, 59, 174, 0);
+	}
+}
+
+.footer-area .marquee-area {
+    padding: 10rem 0;
+}
+
+.footer-area .marquee-area .marquee {
+    color: #000;
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    background-color: #AA5C9C;
+
+    transform: skewY(-4deg);
+}
+
+.footer-area .marquee-area .marquee .marquee__line {
+    padding: 1.5rem 1rem;
+}
+
+
+/* ========================================================================= */
+/* End Footer Area */
+
+/* ========================================================================= */
+/* ========================================================================= */
+/* ========================================================================= */
+/* END MAIN PAGE */
+
+
+/* ABOUT ME PAGE */
+/* ========================================================================= */
+/* ========================================================================= */
+/* ========================================================================= */
+
+/* Banner Area */
+/* ========================================================================= */
+.site-main .banner-area .banner {
+    width: 100%;
+    height: 50rem;
+    padding: 0 10rem;
+
+    background: url(../img/banner.jpg) #F2F2F2 no-repeat;
+    background-position-x: center;
+    background-size: 60rem;
+}
+
+.site-main .banner-area .banner .banner-sub-counter {
+    display: block;
+    height: 10rem;
+    width: 15rem;
+    padding-top: 2rem;
+    margin: 2rem 0;
+
+    text-align: center;
+    line-height: 3rem;
+}
+
+.site-main .banner-area .banner .youtube-sub-counter {
+    background: url(../img/counter-vectors/vector-blue.png) no-repeat;
+    background-size: 100%;
+}
+
+.site-main .banner-area .banner .instagram-sub-counter {
+    background: url(../img/counter-vectors/vector-green.png) no-repeat;
+    background-size: 100%;
+}
+
+.site-main .banner-area .banner .vk-sub-counter {
+    background: url(../img/counter-vectors/vector-yellow.png) no-repeat;
+    background-size: 100%;
+}
+
+.site-main .banner-area .banner .banner-sub-counter .small-danger {
+    color: #000;
+    font-family: var(--danger);
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.site-main .banner-area .banner .banner-sub-counter span {
+    color: #000;
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.site-main .banner-area .banner .banner-greet h1 {
+    margin-top: 7rem;
+
+    color: #000;
+    font-family: var(--danger);
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transform: rotate(5.101deg);
+}
+
+.site-main .banner-area .banner .banner-greet .banner-under-greet {
+    margin-top: 2rem;
+
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2.85769rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transform: rotate(-6.344deg);
+}
+/* ========================================================================= */
+/* End Banner Area */
+
+/* Banner Line Area */
+/* ========================================================================= */
+.site-main .banner-line-area .banner-line-top {
+    display: relative;
+    height: 81px;
+    margin-top: -81px;
+
+    background: url(../img/torn-gray-bg-top.png) no-repeat;
+}
+
+.site-main .banner-line-area .banner-line {
+    
+    height: 25rem;
+    padding: 5rem 0;
+    background: #1F1F1F;
+
+}
+
+.site-main .banner-line-area .banner-line .about-me-block {
+    margin: 0 auto;
+    width: 1320px;
+}
+
+.site-main .banner-line-area .banner-line .about-me-block p {
+    margin-right: 20rem;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+.site-main .banner-line-area .banner-line .about-me-block h2 {
+    margin-top: 5rem;
+
+    color: #FFF;
+    text-align: right;
+    font-family: Inter;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.7rem;
+
+    transform: rotate(3.975deg);
+}
+
+.site-main .banner-line-area .banner-line-bottom {
+    display: relative;
+    height: 87px;
+
+    background: url(../img/torn-gray-bg-bottom.png) white no-repeat;
+}
+
+/* ========================================================================= */
+/* End Banner Line Area */
+
+
+/* Quiz Area */
+/* ========================================================================= */
+.site-main .quiz-area {
+    min-height: 70rem;
+    padding-top: 10rem;
+
+    background: url(../img/target-bg.png) repeat-y;
+    background-size: 1920px;
+    background-position-x: center;
+}
+
+.site-main .quiz-area .quiz-title p {
+    color: #000;
+    font-family: Inter;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.site-main .quiz-area .quiz-sub-title {
+    float: right;
+    padding-right: 12rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.site-main .quiz-area .quiz-sub-title h2 {
+    color: #000;
+    font-family: var(--danger);
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.site-main .quiz-area .quiz-question p {
+    color: #000;
+    font-family: Inter;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    text-align: center;
+}
+
+.site-main .quiz-area .quiz-choices {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-main .quiz-area .quiz-choices .choice-unit {
+    padding: 1rem;
+}
+
+.site-main .quiz-area .quiz-choices .choice-unit .choice-pic {
+    box-sizing: border-box;
+    height: 15rem;
+    width: 19rem;
+
+    margin-top: 1.5rem;
+    padding: 1rem 1rem;
+
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+
+.site-main .quiz-area .quiz-choices .choice-unit .choice-text {
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 5rem;
+    width: 19rem;
+
+    margin-top: 1.5rem;
+
+    text-align: center;
+}
+
+/* Button for picking answers style 1 */
+/* ================================ */
+.site-main .quiz-area .quiz-choices .choice-unit .choice-text .button-style1 {
+    flex: 1;
+    color: var(--primary-color);
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    position: relative;
+    border-radius: 15px;
+    text-transform: uppercase;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    cursor: pointer;
+    background: white;
+    overflow: hidden;
+    transition: 0.6s;
+}
+
+.button-style1:before, .button-style1:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    filter: blur(30px);
+    opacity: 0.4;
+    transition: 0.6s;
+}
+
+.button-style1:before {
+    width: 60px;
+    background: rgba(255,255,255,0.6);
+    transform: translateX(-130px) skewX(-45deg);
+}
+
+.button-style1:after {
+    width: 30px;
+    background: rgba(255,255,255,0.6);
+    transform: translateX(-130px) skewX(-45deg);
+}
+
+.button-style1:hover:before,
+.button-style1:hover:after {
+    opacity: 0.6;
+    transform: translateX(320px) skewX(-45deg);
+}
+
+.button-style1:hover {
+    color: #f2f2f2 !important;
+    background: var(--primary-color) !important;
+}
+/* End Button for picking answers style 1 */
+/* ================================ */
+
+
+/* Button for picking answers style 2 */
+/* ================================ */
+.button-style2 {
+    --color: #000000;
+
+    flex: 1;
+    position:relative; 
+    padding:16px 30px;
+    cursor: pointer;
+    font-size:1.5rem;
+    color:var(--color);
+    border: 2px solid rgba(0,0,0,0.5);
+    border-radius:15px;
+    text-shadow:0 0 15px var(--color);
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:0.1rem;
+    transition:0.5s;
+    z-index:1;
+}
+
+.button-style2:hover {
+    color:#fff;
+    border:2px solid rgba(0,0,0,0,0);
+    box-shadow:0 0 0px var(--color);
+}
+
+.button-style2::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:var(--color);
+    z-index:-1;
+    transform:scale(0);
+    transition:0.5s;
+}
+
+.button-style2:hover::before {
+    transform:scale(1);
+    transition-delay:0.5s;
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--color), 0 0 30px var(--color), 0 0 60px var(--color);
+}
+
+.button-style2 span {
+    position: absolute;
+    background: var(--color);
+    pointer-events: none;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--color),
+    0 0 20px var(--color),
+    0 0 30px var(--color),
+    0 0 50px var(--color),
+    0 0 100px var(--color);
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.25s;
+}
+
+.button-style2:hover span {
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+.button-style2 span:nth-child(1),
+.button-style2 span:nth-child(3) {
+    width: 40px;
+    height: 4px;
+}
+
+.button-style2:hover span:nth-child(1),
+.button-style2:hover span:nth-child(3) {
+    transform: translateX(0);
+}
+
+.button-style2 span:nth-child(2),
+.button-style2 span:nth-child(4) {
+    width: 4px;
+    height: 40px;
+}
+
+.button-style2:hover span:nth-child(1),
+.button-style2:hover span:nth-child(3) {
+    transform: translateY(0);
+}
+
+.button-style2 span:nth-child(1) {
+    top: calc(50% - 2px);
+    left: -50px;
+    transform-origin: left;
+}
+
+.button-style2:hover span:nth-child(1) {
+    left: 50%;
+}
+
+.button-style2 span:nth-child(3) {
+    top: calc(50% - 2px);
+    right: -50px;
+    transform-origin: right;
+}
+
+.button-style2:hover span:nth-child(3) {
+    right: 50%;
+} 
+
+.button-style2 span:nth-child(2) {
+    left: calc(50% - 2px);
+    top: -50px;
+    transform-origin: top;
+}
+
+.button-style2:hover span:nth-child(2) {
+    top: 50%;
+}
+
+.button-style2 span:nth-child(4) {
+    left: calc(50% - 2px);
+    bottom: -50px;
+    transform-origin:  bottom;
+}
+
+.button-style2:hover span:nth-child(4) {
+    bottom: 50%;
+}
+/* ================================ */
+/* End Button for picking answers style 2 */
+
+
+/* Button for picking answers style 3 */
+/* ================================ */
+.button-style3 {
+    flex: 1;
+
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(77, 141, 193);
+
+    border: 3px rgb(77, 141, 193) solid;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in;
+}
+
+.button-style3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px -5px rgb(77, 141, 193);
+    border: 3px rgb(106, 188, 255) solid;
+    color: rgb(103, 187, 255);
+}
+/* ================================ */
+/* End Button for picking answers style 3 */
+
+
+
+
+.site-main .quiz-area .quiz-result {
+    padding: 9rem 0 12rem 0;
+    text-align: right;
+}
+
+.site-main .quiz-area .quiz-result h1 {
+    margin-right: 16rem;
+
+    color: #000;
+    font-family: var(--danger);
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transform: rotate(-0.888deg);
+}
+
+.site-main .quiz-area .quiz-result p {
+    margin-top: 4rem;
+
+    color: #000;
+    font-family: Inter;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transform: rotate(-4.134deg);
+}
+
+.site-main .quiz-area .quiz-main-container {
+    height: 26rem;
+}
+/* ========================================================================= */
+/* End Quiz Area */
+
+
+/* ========================================================================= */
+/* ========================================================================= */
+/* ========================================================================= */
+/* END ABOUT ME PAGE */
+
+
+
+
+
+
+
+
+/* MERCH PAGE */
+/* ========================================================================= */
+/* ========================================================================= */
+/* ========================================================================= */
+
+/* Sub-menu Area */
+/* ========================================================================= */
+.site-main .sub-menu-area {
+    background-color: #000;
+}
+
+.site-main .sub-menu-area .marquee-merch-yellow {
+    position: absolute;
+    top: 5rem;
+    left: -62.1rem;
+    z-index: 3;
+
+    width: 133rem;
+    transform: rotate(90deg);
+    padding: 1rem 0rem;
+    overflow: hidden;
+
+    color: #000;
+    text-align: center;
+    font-family: Druk Cyr;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    user-select: none;
+
+    background: #F9ED5B;
+}
+
+.site-main .sub-menu-area .yellow-line-wrapper .marquee-merch-yellow span {
+    font-family: Futura-Bold;
+}
+
+.site-main .sub-menu-area .sub-menu-nav {
+    display: inline-block;
+    padding: .8rem 0 0 10rem;
+
+    color: #FFF;
+    font-family: Futura PT Cond;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    letter-spacing: 0.3rem;
+}
+
+.site-main .sub-menu-area .sub-menu-nav {
+    user-select: none;
+}
+
+.site-main .sub-menu-area .sub-menu-nav a:hover {
+    color:#D22E12;
+}
+
+
+/* ========================================================================= */
+/* End Sub-menu Area */
+
+/* Merch Area */
+/* ========================================================================= */
+.site-main .merch-area {
+    padding-top: 4.4rem;
+    background-color: black;
+}
+
+.site-main .merch-area .red-line-wrapper {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+}
+
+.site-main .merch-area .red-line-wrapper .marquee-merch-red {
+    position: absolute;
+    top: 6rem;
+    z-index: 1;
+
+    width: 98.9vw;
+
+    color: rgba(255, 255, 255, 0.63);
+    font-family: Futura PT Cond;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    overflow: hidden;
+
+    background: rgba(210, 46, 18, 0.76);
+    mix-blend-mode: hard-light;
+}
+
+.site-main .merch-area .red-line-wrapper .marquee-merch-red span {
+    padding: 0 10rem;
+}
+
+.site-main .merch-area .merch-con {
+    position: relative;
+    z-index: 2;
+}
+
+.site-main .merch-area .sort-menu {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    float: left;
+
+    width: 25.25rem;
+    height: 31.25rem;
+    padding: 0rem 1rem 0rem 10.5rem;
+    
+    background-color: #EE61D6;
+}
+
+.site-main .merch-area .sort-menu .pick-merch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+
+    color: #FFF;
+    text-align: left;
+    font-family: FuturaDemiC;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.14rem;
+    cursor: pointer;
+}
+
+.site-main .merch-area .merch-list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.site-main .merch-area .merch-list .merch-item {
+    padding: 0 1rem 6rem 1rem;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-photo-con {
+    position: relative;
+    background-color: #F5F5F5;
+    border-radius: 15px;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-photo-con img {
+    border-radius: 10px;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-photo-con .fav-button {
+    position: absolute;
+    bottom: 1%; right: 2%;
+
+    border-radius: 50%;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-photo-con .fav-button i {
+    color: #c5c5c5;
+    font-size: 2rem;
+
+    transition: color .5s ease;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-photo-con .fav-button:hover i {
+    color:red;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-photo-con .fav-button i.active {
+    color: red;
+}
+
+.site-main .merch-area .merch-list .merch-item h4 {
+    padding: 1rem 0 1rem 0;
+
+    color: #FFF;
+    text-align: right;
+    font-family: Druk Cyr;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.105rem;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-item-bottom {
+    color: #FFF;
+    text-align: right;
+    font-family: Druk Cyr;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.105rem;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-item-bottom s {
+    color: #909090;
+    margin-right: .5rem;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-item-bottom button {
+    background: #D22E12;
+    padding: 0.25rem;
+    margin-left: 3rem;
+    border: none;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Futura-Bold;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.site-main .merch-area .merch-list .merch-item .merch-item-bottom button:hover {
+    outline: 3px dashed white;
+}
+
+/* ========================================================================= */
+/* End Merch Area */
+
+
+/* ========================================================================= */
+/* ========================================================================= */
+/* ========================================================================= */
+/* END MERCH PAGE */
+
+
+
+
+
+
+
+
+
+/* UNIMPLEMENTED */
+
+/* List of videos Area */
+.site-main .under-video .video-pick-area .thumbnail-image {
+    padding: 1rem;
+}
+
+.site-main .under-video .video-pick-area .thumbnail-image > img {
+    transition: transform .4s ease;
+}
+
+.site-main .under-video .video-pick-area .thumbnail-image > img:hover {
+    filter:brightness(1.1);
+    box-shadow: var(--box-shadow);
+    transform: scale(1.1);
+}
+/* End List of videos Area */

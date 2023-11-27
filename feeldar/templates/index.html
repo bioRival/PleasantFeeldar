@@ -1,0 +1,167 @@
+{% extends 'default.html' %}
+
+{% load static %}
+
+{% block content %}
+  <main class="site-main">
+    <!-- Collage of Ildar faces -->
+    <!-- ====================================================================== -->
+    <section class="faces-area">
+      <div class="pleasant-container-flex">
+        <div class="pleasant-col-side bg-yellow"></div>
+        <div class="pleasant-col">
+          <div class="faces-list">
+            <div class="face-item" id="face01"></div>
+            <div class="face-item" id="face02"></div>
+            <div class="face-item" id="face03"></div>
+            <div class="face-item" id="face04"></div>
+            <div class="face-item" id="face05"></div>
+            <div class="face-item" id="face06"></div>
+            <div class="face-item" id="face07"></div>
+            <div class="face-item" id="face08"></div>
+            <div class="face-item" id="face09"></div>
+            <div class="face-item" id="face10"></div>
+            <div class="face-item" id="face11"></div>
+            <div class="face-item" id="face12"></div>
+            <div class="face-item" id="face13"></div>
+            <div class="face-item" id="face14"></div>
+            <div class="face-item" id="face15"></div>
+            <div class="face-item" id="face16"></div>
+            <div class="face-item" id="face17"></div>
+            <div class="face-item" id="face18"></div>
+          </div>
+        </div>
+        <div class="pleasant-col-side bg-gray"></div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Collage of Ildar faces -->
+
+    <!-- Hello Area -->
+    <!-- ====================================================================== -->
+    <section class="hello-area">
+      <div class="pleasant-container-flex">
+        <div class="pleasant-col-side bg-yellow"></div>
+        <div class="pleasant-col">
+          <div class="hello-con">
+            <div class="hello-wrapper">
+              <img src="{% static '/img/hello-banner.png' %}" alt="" />
+              <div class="pink-smile"></div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <div class="quote-container">
+                <div class="quote-angles">
+                  <i class="fa-solid fa-angles-left"></i>
+                </div>
+                <div class="quote-text">почти весь выпуск смеялась и плакала в самолете наверняка думали я больная))спасибо что не выгнали с рейса.</div>
+                <div class="quote-angles">
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pleasant-col-side bg-black"></div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Hello Area -->
+
+    <!-- Mood Banner Area -->
+    <!-- ====================================================================== -->
+    <section class="mood-banner-area">
+      <div class="pleasant-container">
+        <img src="{% static '/img/mood-banner.png' %}" alt="" />
+        <div class="d-flex justify-content-end">
+          <div class="quote-container">
+            <div class="quote-angles">
+              <i class="fa-solid fa-angles-left"></i>
+            </div>
+            <div class="quote-text">ильдар, спасибо за контент. давно не ловила такой кринж. с подругами уже два часа обсуждаем.</div>
+            <div class="quote-angles">
+              <i class="fa-solid fa-angles-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Mood Banner Area -->
+
+    <!-- Chat-bot Area -->
+    <!-- ====================================================================== -->
+    <section class="chat-bot-area">
+      <div class="bg-gray">
+        <div class="pleasant-container">
+          <div class="emotion-pick-container">
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-funny" tooltip="Грустное">
+                <img src="{% static '/img/emojis-gold/funny.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-cute" tooltip="Няшное">
+                <img src="{% static '/img/emojis-gold/cute.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-sad" tooltip="Грустное">
+                <img src="{% static '/img/emojis-gold/sad.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-sexy" tooltip="Сексуальное">
+                <img src="{% static '/img/emojis-gold/sexy.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-scared" tooltip="Страшное">
+                <img src="{% static '/img/emojis-gold/scared.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-awkward" tooltip="Cringe">
+                <img src="{% static '/img/emojis-gold/awkward.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-angry" tooltip="Злобное">
+                <img src="{% static '/img/emojis-gold/angry.png' %}" alt="" />
+              </div>
+            </div>
+            <div class="emotion-pick-item">
+              <div class="emotion-pick-button pick-nostalgic" tooltip="Ностальгическое">
+                <img src="{% static '/img/emojis-gold/nostalgic.png' %}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid chat-bot-intro">
+          <div class="pleasant-container">
+            <div class="d-flex justify-content-end">
+              <div class="top-banner-container">
+                <img src="{% static '/img/top-banner.png' %}" alt="" />
+                <div class="top-banner-text-con">
+                  <div class="top-banner-text-yellow">Чат-бот</div>
+                  <div class="top-banner-text-red">Уже подобрал для тебя видео</div>
+                </div>
+                <div class="tob-banner-sub-text">
+                  БЕРИ <span>суХАРИКИ</span> И НАСЛАЖДАЙСЯ!
+                </div>
+                <button class="chat-bot-start-button">Жми</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Chat-bot Area -->
+
+    <!-- Games List Area -->
+    <!-- ====================================================================== -->
+    <section class="games-area"></section>
+    <!-- ====================================================================== -->
+    <!-- End Game List Area -->
+  </main>
+{% endblock %}

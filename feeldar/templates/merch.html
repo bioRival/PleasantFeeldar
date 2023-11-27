@@ -1,0 +1,136 @@
+{% extends 'default.html' %}
+
+{% load static %}
+
+{% block content %}
+  <main class="site-main">
+    <!-- Sub Header Area for yellow line and extra navigation -->
+    <!-- ====================================================================== -->
+    <section class="sub-menu-area">
+      <div class="marquee-merch-yellow">
+        <span>*</span>Choose<span>*</span>Play<span>*</span>Chill
+        <span>*</span>Choose<span>*</span>Play<span>*</span>Chill
+        <span>*</span>Choose<span>*</span>Play<span>*</span>Chill
+        <span>*</span>Choose<span>*</span>Play<span>*</span>Chill
+        <span>*</span>Choose<span>*</span>Play<span>*</span>Chill
+        <span>*</span>Choose<span>*</span>Play<span>*</span>Chill
+      </div>
+      <div class="sub-menu-nav">
+        <a href="{% url 'index' %}">Главная</a><span>/</span><a href="{% url 'merch' %}">Мерч</a>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Sub Header Area for yellow line and extra navigation -->
+
+    <!-- Merch Area -->
+    <!-- ====================================================================== -->
+    <section class="merch-area">
+      <div class="red-line-wrapper">
+        <div class="marquee-merch-red">
+          <span>PLEASANT ILDAR</span>
+          <span>PLEASANT ILDAR</span>
+          <span>PLEASANT ILDAR</span>
+          <span>PLEASANT ILDAR</span>
+          <span>PLEASANT ILDAR</span>
+        </div>
+      </div>
+      <div class="container-fluid merch-con">
+        <div class="d-flex">
+          <div class="sort-menu">
+            <div class="pick-merch">
+              <span>ФУТБОЛКИ</span>
+            </div>
+            <div class="pick-merch">ХУДИ</div>
+            <div class="pick-merch">АКСЕССУАРЫ</div>
+            <div class="pick-merch">КОЛЛЕКЦИИ</div>
+            <div class="pick-merch">Sale %</div>
+          </div>
+          <div class="merch-list">
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch1.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h4 class="merch-title">БОДИ «ИГНОРИРУЙ» ЧЁРНОЕ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch2.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-solid fa-heart active"></i></button>
+              </div>
+              <h4 class="merch-title">ХУДИ «ИГНОРИРУЙ» ЧЁРНЫЙ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch3.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h4 class="merch-title">БОДИ «ИГНОРИРУЙ» ЧЁРНОЕ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch4.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h4 class="merch-title">БОДИ «ИГНОРИРУЙ» ЧЁРНОЕ</h4>
+              <div class="merch-item-bottom">
+                <s>3500</s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch5.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-solid fa-heart active"></i></button>
+              </div>
+              <h4 class="merch-title">ХУДИ «ИГНОРИРУЙ» ЧЁРНЫЙ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch6.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h4 class="merch-title">БОДИ «ИГНОРИРУЙ» ЧЁРНОЕ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch7.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h4 class="merch-title">БОДИ «ИГНОРИРУЙ» ЧЁРНОЕ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+            <div class="merch-item">
+              <div class="merch-photo-con">
+                <img src="{% static '/img/merch-photos/merch8.png' %}" alt="" />
+                <button class="fav-button"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h4 class="merch-title">БОДИ «ИГНОРИРУЙ» ЧЁРНОЕ</h4>
+              <div class="merch-item-bottom">
+                <s></s><span>4300</span><button>Купить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Merch Area -->
+  </main>
+{% endblock %}

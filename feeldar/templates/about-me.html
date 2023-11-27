@@ -1,0 +1,175 @@
+{% extends 'default.html' %}
+
+{% load static %}
+
+{% block content %}
+  <main class="site-main">
+    <!-- Banner Area -->
+    <!-- ====================================================================== -->
+    <section class="banner-area">
+      <div class="container-fluid">
+        <div class="banner">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="banner-sub-counter youtube-sub-counter">
+                <h4 class="small-danger">Youtube</h4>
+                <span>3,79 млн</span>
+              </div>
+              <div class="banner-sub-counter instagram-sub-counter">
+                <h4 class="small-danger">Instagram</h4>
+                <span>3,79 млн</span>
+              </div>
+              <div class="banner-sub-counter vk-sub-counter">
+                <h4 class="small-danger">VK</h4>
+                <span>3,79 млн</span>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="banner-greet float-right">
+                <h1>Я - Ильдар</h1>
+                <div class="banner-under-greet">
+                  <p>ПРИЯТНЫЙ</p>
+                  <p>молодой человек</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gray-line-top"></div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Banner Area -->
+
+    <!-- Banner Line Area -->
+    <!-- ====================================================================== -->
+    <section class="banner-line-area">
+      <div class="container-fluid">
+        <div class="banner-line-top"></div>
+        <div class="banner-line">
+          <div class="about-me-block">
+            <div class="decorative-text1">
+              <p>
+                Снимаю разноформатные ролики, начиная от скетчей, <br />
+                заканчивая рассуждениями на какую-либо тему.
+              </p>
+            </div>
+            <div class="decorative-text2">
+              <h2>ЗДЕСЬ МЫ ГОВОРИМ ОБО ВСЕМ !</h2>
+            </div>
+          </div>
+        </div>
+        <div class="banner-line-bottom"></div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Banner Line Area -->
+
+    <!-- Quiz Area -->
+    <!-- ====================================================================== -->
+    <section class="quiz-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="quiz-title">
+              <p>
+                Если ты давно на меня подписан, <br />
+                проверим как хорошо ты меня знаешь!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="quiz-sub-title">
+              <h2>Го!</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="quiz-main-container">
+              <img class="quiz-image" src="https://cdn-icons-png.flaticon.com/512/1288/1288787.png" />
+              <div class="start_btn">
+                <button>Начать Челлендж</button>
+              </div>
+
+              <!-- Info Box -->
+              <div class="info_box">
+                <div class="info-title">
+                  <span>Правила Игры</span>
+                </div>
+                <div class="info-list">
+                  <div class="info">
+                    1. У тебя будет <span>15 секунд</span> на каждый вопрос.
+                  </div>
+                  <div class="info">2. Выбрав ответ, ты не сможешь его поменять.</div>
+                  <div class="info">3. Ты не сможешь ничего выбрать, когда время истечет.</div>
+                  <div class="info">4. Ты не сможешь выйти из челленджа, до тех пор пока его не пройдешь.</div>
+                  <div class="info">5. Ты получишь поинты, на основе своих ответов.</div>
+                </div>
+                <div class="buttons">
+                  <button class="quit">Выйти</button>
+                  <button class="restart">Продолжить</button>
+                </div>
+              </div>
+
+              <!-- Quiz Box -->
+              <div class="quiz_box">
+                <header>
+                  <div class="title">Проверь, как хорошо ты знаешь Ильдара!</div>
+                  <div class="timer">
+                    <div class="time_left_txt">Осталось Времени</div>
+                    <div class="timer_sec">15</div>
+                  </div>
+                  <div class="time_line"></div>
+                </header>
+                <section>
+                  <div class="que_text">
+                    <!-- Here I've inserted question from JavaScript -->
+                  </div>
+                  <div class="option_list">
+                    <!-- Here I've inserted options from JavaScript -->
+                  </div>
+                </section>
+
+                <!-- footer of Quiz Box -->
+                <footer class="quiz-footer">
+                  <div class="total_que">
+                    <!-- Here I've inserted Question Count Number from JavaScript -->
+                  </div>
+                  <button class="next_btn">Дальше</button>
+                </footer>
+              </div>
+
+              <!-- Result Box -->
+              <div class="result_box">
+                <div class="icon">
+                  <i class="fas fa-crown"></i>
+                </div>
+                <div class="complete_text">Челлендж пройден!</div>
+                <div class="score_text">
+                  <!-- Here I've inserted Score Result from JavaScript -->
+                </div>
+                <div class="buttons">
+                  <button class="restart">Повторить</button>
+                  <button class="quit">Выйти</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="quiz-result">
+              <h1>ГУД!</h1>
+              <p>Ты ответил лучше 78% участников!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====================================================================== -->
+    <!-- End Quiz Area -->
+  </main>
+{% endblock %}

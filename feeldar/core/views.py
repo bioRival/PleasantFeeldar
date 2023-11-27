@@ -6,6 +6,39 @@ from .models import Content, Emotion, ContentEmotion
 from collections import Counter
 
 
+
+
+def index(request):
+    """ View for Home Page """
+    return render(request, 'index.html')
+
+
+def merch(request):
+    """ View for Merch Page """
+    return render(request, 'merch.html')
+
+
+def about_me(request):
+    """ View for About Me Page """
+    return render(request, 'about-me.html')
+
+
+
+
+
+
+# Представление для регистрации
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('select_video')
+    else:
+        form = RegistrationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
 # Представение для выбора видео
 @login_required
 def select_video(request):
