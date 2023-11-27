@@ -1,9 +1,13 @@
 from django.db.models import Count
+from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.views.decorators.http import require_GET
+
 from .models import Content, Emotion, ContentEmotion
 from collections import Counter
+import random
 
 
 
@@ -45,6 +49,7 @@ def select_video(request):
     videos = Content.objects.all()
     return render(request, 'core/select_video.html', {'videos': videos})
 
+
 # Представление для выбора эмоции
 @login_required
 def select_emotion(request, video_id):
@@ -57,6 +62,7 @@ def select_emotion(request, video_id):
         video_emotion.save()
         return redirect('video_details', video_id=video_id)
     return render(request, 'core/select_emotion.html', {'video': video, 'emotions': emotions})
+
 
 @login_required
 def video_list(request):
@@ -74,9 +80,46 @@ def get_most_common_emotion(video):
     most_common_emotion, _ = emotion_counter.most_common(1)[0]
     return most_common_emotion
 
+
 @login_required
 def video_details(request, video_id):
     video = get_object_or_404(Content, id=video_id)
     most_common_emotion = get_most_common_emotion(video)
     return render(request, 'core/video_details.html', {'video': video, 'most_common_emotion': most_common_emotion})
 
+
+def chatbot(request):
+    emotions = Emotion.objects.all()
+    return render(request, 'core/chat.html', {'emotions': emotions})
+    # testing / chat переключатель
+
+
+def update_bot(request):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'GET':
+        emotion_id = request.GET.get('emotion_id')
+        if emotion_id:
+            content_list = Content.objects.filter(emotions=Emotion.id(emotion_id)).order_by('?')[:5]
+        else:
+            content_list = Content.objects.order_by('?')[:5]
+        contents = [{'url': f"{content.url}"} for content in content_list]
+        return JsonResponse({'contents': contents}, status=200)
+    else:
+        return JsonResponse({}, status=400)
+
+
+@login_required
+def save_emotion(request):
+    if request.method == 'POST':
+        emotion_name = request.POST.get('emotion')
+        video_title = request.POST.get('videoTitle')
+
+        emotion = Emotion.objects.get(name=emotion_name)
+        video = Content.objects.get(title=video_title)
+        user = request.user
+
+        content_emotion = ContentEmotion(video=video, emotion=emotion, user=user)
+        content_emotion.save()
+
+        return HttpResponse("Success")
+    else:
+        return HttpResponseBadRequest()
