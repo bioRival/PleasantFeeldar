@@ -7,6 +7,28 @@ from .models import Content, Emotion, ContentEmotion
 from .forms import RegistrationForm
 from collections import Counter
 
+
+
+
+def index(request):
+    """ View for Home Page """
+    return render(request, 'index.html')
+
+
+def merch(request):
+    """ View for Merch Page """
+    return render(request, 'merch.html')
+
+
+def about_me(request):
+    """ View for About Me Page """
+    return render(request, 'about-me.html')
+
+
+
+
+
+
 # Представление для регистрации
 def register(request):
     if request.method == 'POST':

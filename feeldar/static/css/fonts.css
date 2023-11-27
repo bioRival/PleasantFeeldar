@@ -1,0 +1,92 @@
+/*  @font-face */
+
+@font-face {
+    font-family: "Neutral Face";
+    src: url(../fonts/Neutral-Face/NeutralFace.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neutral Face";
+    src: url(../fonts/Neutral-Face/NeutralFace-Bold.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Another Danger Slanted";
+    src: url(../fonts/Another-Danger-Slanted.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter/Inter-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Monument Extended";
+    src: url(../fonts/monument-extended/MonumentExtended-Regular.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Monument Extended";
+    src: url(../fonts/monument-extended/MonumentExtended-Ultrabold.otf) format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Druk Cyr";
+    src: url(../fonts/Druk-Cyr/DrukCyr-Medium.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Druk Cyr";
+    src: url(../fonts/Druk-Cyr/DrukCyr-Heavy.ttf) format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Druk Cyr";
+    src: url(../fonts/Druk-Cyr/DrukCyr-Super.ttf) format('truetype');
+    font-weight: 1000;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Futura-Bold";
+    src: url(../fonts/Futura/Futura-Bold.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Futura PT Cond";
+    src: url(../fonts/Futura/futura-pt-cond-book.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "FuturaDemiC";
+    src: url(../fonts/Futura/futurademic.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Futura PT Cond Medium Italic";
+    src: url(../fonts/Futura/futura-pt-cond-medium-oblique.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

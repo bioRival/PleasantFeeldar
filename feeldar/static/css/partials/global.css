@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--druk); /* default font */
+}
+
+html, body {
+    min-height:100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4 {
+    color: black;
+    text-transform: uppercase;
+}
+.container-fluid {
+    padding: 0;
+}
+/* Clearing default styling for links - such as blue color or underline */
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: inherit; 
+    text-decoration: inherit;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* Making Header appear on top no matter what */
+header {
+    position: relative;
+    z-index: 99;
+}
+
+
+
+
+
+/* Containers */
+/* ========================================================================= */
+.pleasant-container {
+    display: block;
+    margin: 0 auto;
+
+    width: 1280px;
+}
+
+/* Flex Container to allow different bg colors on right and left */
+.pleasant-container-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.pleasant-col {
+    flex: 0 0 1280px;
+}
+
+.pleasant-col-side {
+    flex: 1;
+}
+
+
+
+/* Quotes Style */
+.quote-container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.quote-angles {
+    display: flex;
+    align-items: center;
+    padding: 0 .5rem;
+    color: white;
+    font-size: 3rem;
+}
+
+.quote-text {
+    color: black;
+    text-align: left;
+    font-family: Futura PT Cond;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.25rem;
+}
+/* ========================================================================= */
+/* End Containers */
+
+
+/* Background Colors */
+.bg-black {
+    background-color: var(--black-color);
+}
+
+.bg-gray {
+    background-color: var(--gray-color);
+}
+
+.bg-yellow {
+    background-color: var(--yellow-color);
+}
+
+
+
+
+
+
+/* Often used titles */
+.mini-title {
+    font-family: Neutral Face;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+/* Often used paragraph style */
+.para {
+    color: #2E2C2C;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+
+
+/* Emotions Emojis */
+.emotion-funny::before {
+    content: '🤣';
+}
+
+.emotion-cute::before {
+    content: '😙';
+}
+
+.emotion-sad::before {
+    content: '😟';
+}
+
+.emotion-sexy::before {
+    content: '🥴';
+}
+
+.emotion-scary::before {
+    content: '😱';
+}
+
+.emotion-awkward::before {
+    content: '😬';
+}
+
+.emotion-angry::before {
+    content: '😈';
+}
+
+.emotion-nostalgic::before {
+    content: '🧐';
+}
+
+
+
+/* Marquee - the running line */
+.marquee-area {
+    /* padding: 10rem 0; */
+}
+
+.marquee {
+    overflow: hidden;
+}
+  
+.marquee__inner {
+    display: flex;
+}
+
+.marquee__line {
+    flex-shrink: 0;
+    margin: 0;
+    min-width: 100%;
+    white-space: nowrap;
+    animation: marqueeLine 20s linear infinite;
+}
+
+@keyframes marqueeLine {
+    from {
+        transform: translateX(0);
+    }
+    
+    to {
+        transform: translateX(-100%);
+    }
+}
+/* End of Marquee */
