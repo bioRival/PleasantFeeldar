@@ -43,7 +43,7 @@ def register(request):
         form = RegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
 
-# Представение для выбора видео
+# Представление для выбора видео
 @login_required
 def select_video(request):
     videos = Content.objects.all()
