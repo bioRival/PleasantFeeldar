@@ -202,5 +202,47 @@ $('.site-main .merch-area .merch-list .merch-item .merch-photo-con .fav-button')
 
 $('.youtube-area .youtube-container .mood-picker .mood-button').click(pickMood);
 $('.youtube-area .youtube-container .youtube-screen .rating .rating-item').click(rateVideo);
+
+$('.site-main .chat-bot-2 .chat-bot .chat_butt').on('click', function() { //отредактировать путь согласно расположению
+        var emotion_id = $(this).data('emotion-id');
+        $.ajax({
+            url: 'update_bot',
+            type: 'GET',
+            data: {'emotion_id': emotion_id},
+            success: function(response) {
+                $('#video-list').empty();
+                response.contents.forEach(function(video) {
+                    var videoUrl = 'https://www.youtube.com/embed/' + video.url;
+                    var imgUrl = 'https://img.youtube.com/vi/' + video.url + '/mqdefault.jpg';
+                    $('#video-list').append('<div><h3>' + video.url + '</h3><img src="' + imgUrl + '" width="320" height="180" onclick="openVideo(\'' + video.url + '\')"></div>');
+                });
+            }
+        });
+    });
 });
+//сделал глобальной чтобы не возникало проблем с маршрутами
+function openVideo(videoUrl) {
+    $('#video-list').empty();
+    var iframeUrl = '//www.youtube.com/embed/' + videoUrl;
+    var videoHtml = `
+        <div>
+            <iframe src="${iframeUrl}" frameborder="0" allowfullscreen width="882" height="501"></iframe>
+        </div>`;
+    $('#video-list').append(videoHtml);
+
+function saveEmotion(emotion_id, video_url) {
+var emotion = emotion_id;
+var videoTitle = video_url.split('/').pop();
+$.ajax({
+    type: 'POST',
+    url: 'save_emotion',
+    data: {
+        'emotion': emotion,
+        'videoTitle': videoTitle
+    },
+    success: function(response) {
+    }
+});
+}
+
 
