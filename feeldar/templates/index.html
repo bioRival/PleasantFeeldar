@@ -176,7 +176,12 @@
         <img src="{% static '/img/bg-snack.png' %}" alt="" class="bg-snack" />
       </div>
       <div class="chat-bot">
-        <!-- Саша вставляй сюда свой HTML код -->
+        <div>
+        {% for emotion in emotions %}
+            <button class="emotion-btn" data-emotion="{{ emotion.name }}">{{ emotion.name }}</button>
+        {% endfor %}
+        </div>
+        <div id="video-list"></div>
       </div>
     </section>
     <!-- ====================================================================== -->
@@ -262,5 +267,5 @@
 {% endblock %}
 
 {% block js_plugins %}
-  <!-- Саша сюда вставляй ссылку на JS -->
+  <script src="{% static '/js/chatbot.js' %}" type="text/javascript"></script>
 {% endblock %}
