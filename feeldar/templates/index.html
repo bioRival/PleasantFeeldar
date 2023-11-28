@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block css_plugin%}
+  <!-- Саша сюда вставляй ссылку на свой CSS -->
+{% endblock  %}
+
 {% block content %}
   <main class="site-main">
     <!-- Collage of Ildar faces -->
@@ -90,102 +94,89 @@
 
     <!-- Chat-bot Area -->
     <!-- ====================================================================== -->
-    <section class="chat-bot-area">
-      <div class="bg-gray">
+    <section class="chat-bot-area bg-gray">
+      <div class="pleasant-container">
+        <div class="emotion-pick-container">
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-funny" tooltip="Грустное">
+              <img src="{% static '/img/emojis-gold/funny.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-cute" tooltip="Няшное">
+              <img src="{% static '/img/emojis-gold/cute.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-sad" tooltip="Грустное">
+              <img src="{% static '/img/emojis-gold/sad.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-sexy" tooltip="Сексуальное">
+              <img src="{% static '/img/emojis-gold/sexy.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-scared" tooltip="Страшное">
+              <img src="{% static '/img/emojis-gold/scared.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-awkward" tooltip="Cringe">
+              <img src="{% static '/img/emojis-gold/awkward.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-angry" tooltip="Злобное">
+              <img src="{% static '/img/emojis-gold/angry.png' %}" alt="" />
+            </div>
+          </div>
+          <div class="emotion-pick-item">
+            <div class="emotion-pick-button pick-nostalgic" tooltip="Ностальгическое">
+              <img src="{% static '/img/emojis-gold/nostalgic.png' %}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid chat-bot-intro">
         <div class="pleasant-container">
-          <div class="emotion-pick-container">
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-funny" tooltip="Грустное">
-                <img src="{% static '/img/emojis-gold/funny.png' %}" alt="" />
+          <div class="d-flex justify-content-end">
+            <div class="top-banner-container">
+              <img src="{% static '/img/top-banner.png' %}" alt="" />
+              <div class="top-banner-text-con">
+                <div class="top-banner-text-yellow">Чат-бот</div>
+                <div class="top-banner-text-red">Уже подобрал для тебя видео</div>
               </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-cute" tooltip="Няшное">
-                <img src="{% static '/img/emojis-gold/cute.png' %}" alt="" />
+              <div class="tob-banner-sub-text">
+                БЕРИ <span>суХАРИКИ</span> И НАСЛАЖДАЙСЯ!
               </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-sad" tooltip="Грустное">
-                <img src="{% static '/img/emojis-gold/sad.png' %}" alt="" />
+              <div class="quote-container" id="bottom-quote">
+                <div class="quote-angles">
+                  <i class="fa-solid fa-angles-left"></i>
+                </div>
+                <div class="quote-text">ильдарик,спасибо!бутерброд под этот видос зашёл моментально! даже в туалет за весь видос не ходила.</div>
+                <div class="quote-angles">
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
               </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-sexy" tooltip="Сексуальное">
-                <img src="{% static '/img/emojis-gold/sexy.png' %}" alt="" />
-              </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-scared" tooltip="Страшное">
-                <img src="{% static '/img/emojis-gold/scared.png' %}" alt="" />
-              </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-awkward" tooltip="Cringe">
-                <img src="{% static '/img/emojis-gold/awkward.png' %}" alt="" />
-              </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-angry" tooltip="Злобное">
-                <img src="{% static '/img/emojis-gold/angry.png' %}" alt="" />
-              </div>
-            </div>
-            <div class="emotion-pick-item">
-              <div class="emotion-pick-button pick-nostalgic" tooltip="Ностальгическое">
-                <img src="{% static '/img/emojis-gold/nostalgic.png' %}" alt="" />
-              </div>
+              <button class="chat-bot-start-button"><img src="{% static '/img/buttons/chat-bot-start-button.png' %}" alt="" /></button>
             </div>
           </div>
         </div>
-        <div class="container-fluid chat-bot-intro">
-          <div class="pleasant-container">
-            <div class="d-flex justify-content-end">
-
-              <div class="top-banner-container">
-                <img src="{% static '/img/top-banner.png' %}" alt="" />
-                <div class="top-banner-text-con">
-                  <div class="top-banner-text-yellow">Чат-бот</div>
-                  <div class="top-banner-text-red">Уже подобрал для тебя видео</div>
-                </div>
-                <div class="tob-banner-sub-text">
-                  БЕРИ <span>суХАРИКИ</span> И НАСЛАЖДАЙСЯ!
-                </div>
-                <div class="quote-container" id="bottom-quote">
-                  <div class="quote-angles">
-                    <i class="fa-solid fa-angles-left"></i>
-                  </div>
-                  <div class="quote-text">
-                    ильдарик,спасибо!бутерброд 
-                    под этот видос зашёл 
-                    моментально! даже в туалет 
-                    за весь видос не ходила.
-                  </div>
-                  <div class="quote-angles">
-                    <i class="fa-solid fa-angles-right"></i>
-                  </div>
-                </div>
-                <button class="chat-bot-start-button">
-                  <img src="{% static '/img/buttons/chat-bot-start-button.png' %}" alt="">
-                </button>
-
-
-              </div>
-            </div>
+        <div class="quote-container" id="side-quote">
+          <div class="quote-angles">
+            <i class="fa-solid fa-angles-left"></i>
           </div>
-          <div class="quote-container" id="side-quote">
-            <div class="quote-angles">
-              <i class="fa-solid fa-angles-left"></i>
-            </div>
-            <div class="quote-text">
-              ильдар реагирует на каждого котика, 
-              но пропускает мимо и не умиляется прекрасной маленькой собачке. 
-              я в печале. так этого ждала...
-            </div>
-            <div class="quote-angles">
-              <i class="fa-solid fa-angles-right"></i>
-            </div>
+          <div class="quote-text">ильдар реагирует на каждого котика, но пропускает мимо и не умиляется прекрасной маленькой собачке. я в печале. так этого ждала...</div>
+          <div class="quote-angles">
+            <i class="fa-solid fa-angles-right"></i>
           </div>
-          <img src="{% static '/img/bg-snack.png' %}" alt="" class="bg-snack">
         </div>
+        <img src="{% static '/img/bg-snack.png' %}" alt="" class="bg-snack" />
+      </div>
+      <div class="chat-bot">
+        <!-- Саша вставляй сюда свой HTML код -->
       </div>
     </section>
     <!-- ====================================================================== -->
@@ -194,26 +185,17 @@
     <!-- Games List Area -->
     <!-- ====================================================================== -->
     <section class="games-list-area bg-gray">
-      <div class="yellow-line-marquee">
-        CHOOSE*PLAY*CHILL*
-        CHOOSE*PLAY*CHILL*
-        CHOOSE*PLAY*CHILL*
-        CHOOSE*PLAY*CHILL*
-      </div>
+      <div class="yellow-line-marquee">CHOOSE*PLAY*CHILL* CHOOSE*PLAY*CHILL* CHOOSE*PLAY*CHILL* CHOOSE*PLAY*CHILL*</div>
       <div class="pleasant-container">
         <div class="games-list-banner">
-          <img src="{% static '/img/games-list-banner.png' %}" alt="">
+          <img src="{% static '/img/games-list-banner.png' %}" alt="" />
         </div>
         <div class="d-flex justify-content-end">
           <div class="quote-container" id="banner-quote">
             <div class="quote-angles">
               <i class="fa-solid fa-angles-left"></i>
             </div>
-            <div class="quote-text">
-              ильдар, ты прям помолодел, выглядишь
-              на 11! прическа супер!!!!  максимально 
-              приятный молодой человек) 
-            </div>
+            <div class="quote-text">ильдар, ты прям помолодел, выглядишь на 11! прическа супер!!!! максимально приятный молодой человек)</div>
             <div class="quote-angles">
               <i class="fa-solid fa-angles-right"></i>
             </div>
@@ -222,40 +204,31 @@
         <div class="games-list">
           <div class="games-list-row">
             <div>
-              <img src="{% static '/img/games-list/game1.png' %}" alt="">
+              <img src="{% static '/img/games-list/game1.png' %}" alt="" />
             </div>
             <div class="games-list-description">
               <h3>Карандашная магия</h3>
-              <p>
-                Присоединись к игре, используй свой творческий 
-                потенциал и докажи себе, что ты истинный 
-                виртуальный художник!
-              </p>
+              <p>Присоединись к игре, используй свой творческий потенциал и докажи себе, что ты истинный виртуальный художник!</p>
             </div>
           </div>
           <div class="games-list-row">
             <div>
-              <img src="{% static '/img/games-list/game2.png' %}" alt="">
+              <img src="{% static '/img/games-list/game2.png' %}" alt="" />
             </div>
             <div class="games-list-description">
               <h3>Угадай возраст</h3>
-              <p>
-                Соревнуйся с другими игроками онлайн, чтобы 
-                доказать, что твои интуиция и аналитические
-                способности на высоте.
-              </p>
+              <p>Соревнуйся с другими игроками онлайн, чтобы доказать, что твои интуиция и аналитические способности на высоте.</p>
             </div>
           </div>
           <div class="games-list-row">
             <div>
-              <img src="{% static '/img/games-list/game3.png' %}" alt="">
+              <img src="{% static '/img/games-list/game3.png' %}" alt="" />
             </div>
             <div class="games-list-description">
               <h3>Ильдар летающий герой</h3>
               <p>
-                Экшн-игра с Ильдаром: <br>
-                перепрыгивай через препятствия- девочек, жаждящих 
-                от тебя забеременеть и собирай бургеры.
+                Экшн-игра с Ильдаром: <br />
+                перепрыгивай через препятствия- девочек, жаждящих от тебя забеременеть и собирай бургеры.
               </p>
             </div>
           </div>
@@ -265,28 +238,19 @@
             <div class="quote-angles">
               <i class="fa-solid fa-angles-left"></i>
             </div>
-            <div class="quote-text">
-              как же прекрасно есть 
-              пельмени и смотреть 
-              ильдара всегда.
-            </div>
+            <div class="quote-text">как же прекрасно есть пельмени и смотреть ильдара всегда.</div>
             <div class="quote-angles">
               <i class="fa-solid fa-angles-right"></i>
             </div>
           </div>
-          <img src="{% static '/img/blue-tape.png' %}" alt="" class="blue-tape">
+          <img src="{% static '/img/blue-tape.png' %}" alt="" class="blue-tape" />
         </div>
       </div>
       <div class="quote-container" id="side-quote-games">
         <div class="quote-angles">
           <i class="fa-solid fa-angles-left"></i>
         </div>
-        <div class="quote-text">
-          как же я обожаю когда 
-          ильдар начинает нести всякую 
-          хрень и сам потом с этого 
-          кринжует, я ору в голос 
-        </div>
+        <div class="quote-text">как же я обожаю когда ильдар начинает нести всякую хрень и сам потом с этого кринжует, я ору в голос</div>
         <div class="quote-angles">
           <i class="fa-solid fa-angles-right"></i>
         </div>
@@ -295,4 +259,8 @@
     <!-- ====================================================================== -->
     <!-- End Game List Area -->
   </main>
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- Саша сюда вставляй ссылку на JS -->
 {% endblock %}
