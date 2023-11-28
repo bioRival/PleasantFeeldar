@@ -23,9 +23,10 @@ $('.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item .emotion
     clearClass: '.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item .emotion-pick-button',
 }, toggleActive);
 
-$('.footer-area .marquee-area .footer-line').marquee({
+// Footer Marquee Red Line
+$('.footer-area .marquee-area .footer-red-line').marquee({
     //duration in milliseconds of the marquee
-	duration: 100000,
+	duration: 50000,
 	//gap in pixels between the tickers
 	gap: 100,
 	//time in milliseconds before the marquee will start animating
@@ -36,6 +37,22 @@ $('.footer-area .marquee-area .footer-line').marquee({
 	duplicated: true,
     startVisible: true,
 });
+
+// Footer Marquee Yellow Line
+$('.footer-area .marquee-area .footer-yellow-line').marquee({
+    //duration in milliseconds of the marquee
+	duration: 50000,
+	//gap in pixels between the tickers
+	gap: 100,
+	//time in milliseconds before the marquee will start animating
+	delayBeforeStart: 0,
+	//'left' or 'right'
+	direction: 'right',
+	//true or false - should the marquee be duplicated to show an effect of continues flow
+	duplicated: true,
+    startVisible: true,
+});
+
 // =============================================================
 // END GLOBAL
 

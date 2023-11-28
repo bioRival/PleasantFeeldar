@@ -666,6 +666,8 @@
     padding-top: 4rem;
     background-color: #000;
     min-height: 10rem;
+
+    background-image: url(../img/bg-footer.png);
 }
 
 .footer-area .social-links-area {
