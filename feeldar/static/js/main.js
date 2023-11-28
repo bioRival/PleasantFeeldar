@@ -22,6 +22,20 @@ function toggleActive(event) {
 $('.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item .emotion-pick-button').click({
     clearClass: '.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item .emotion-pick-button',
 }, toggleActive);
+
+$('.footer-area .marquee-area .footer-line').marquee({
+    //duration in milliseconds of the marquee
+	duration: 100000,
+	//gap in pixels between the tickers
+	gap: 100,
+	//time in milliseconds before the marquee will start animating
+	delayBeforeStart: 0,
+	//'left' or 'right'
+	direction: 'left',
+	//true or false - should the marquee be duplicated to show an effect of continues flow
+	duplicated: true,
+    startVisible: true,
+});
 // =============================================================
 // END GLOBAL
 
