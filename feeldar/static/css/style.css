@@ -852,6 +852,7 @@
 /* ========================================================================= */
 .site-main .banner-area {
     position: relative;
+    background-color: var(--black-color);
 }
 
 .site-main .banner-area .marquee-about-me-yellow-wrapper {
@@ -882,7 +883,73 @@
     background: #F9ED5B;
 }
 
+.site-main .banner-area .subscriber-count-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
 
+.site-main .banner-area .subscriber-count-container .subscriber-count-item {
+    position: relative;
+
+    background-color: green;
+}
+
+.site-main .banner-area .subscriber-count-container .subscriber-count-item h1 {
+    color: #FFF;
+    font-family: Druk Cyr;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-wrap: nowrap;
+
+    background-color: #F9ED5B;
+}
+
+.site-main .banner-area .subscriber-count-container .subscriber-count-item h2 {
+    position: absolute;
+    top: 5rem; right: -2rem;
+    transform: rotate(-7deg);
+
+    color: #CF2018;
+    font-family: Druk Cyr;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+}
+
+.site-main .banner-area .about-me-banner {
+    height: 56rem;
+    margin-top: -7rem;
+    padding-top: 40rem;
+    padding-left: 50%;
+    background: url(../img/banners/about-me-banner.png) no-repeat;
+    background-size: 100%;
+}
+
+.site-main .banner-area .about-me-banner p {
+    width: 26rem;
+
+    color: #FFF;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.125rem; /* 104.167% */
+}
+
+.site-main .banner-area .about-me-banner p span {
+    display: inline-block;
+    height: 2.5rem;
+    padding-right: 3rem;
+    background-color: var(--pink-color);
+    line-height: 2.5rem;
+}
 
 /* ========================================================================= */
 /* End Banner Area */
