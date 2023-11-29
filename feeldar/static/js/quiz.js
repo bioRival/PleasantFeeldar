@@ -163,6 +163,7 @@ function showResult(){
         let scoreTag = '<span>и сорян 😐, У тебя только <p>'+ userScore +'</p> из <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
+    saveResult(userScore)
 }
 
 function startTimer(time){
@@ -337,3 +338,20 @@ let questions = [
   //   ]
   // },
 ];
+function saveResult(userScore) {
+    const csrfToken = document.querySelector('input[name=csrfmiddlewaretoken]').value;
+
+    fetch('/save-result/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        body: JSON.stringify({
+            score: userScore
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+}

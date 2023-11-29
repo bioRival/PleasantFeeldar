@@ -36,3 +36,8 @@ class ContentEmotion(models.Model):
 
     def __str__(self):
         return f"{self.video.title} -> {self.emotion.name} ({self.user.username})"
+
+
+class Result(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    score = models.IntegerField()

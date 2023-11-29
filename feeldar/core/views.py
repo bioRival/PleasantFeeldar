@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_GET
 
-from .models import Content, Emotion, ContentEmotion
+from .models import Content, Emotion, ContentEmotion, Result
 from collections import Counter
 import random
 
@@ -13,7 +13,7 @@ import random
 def index(request):
     """ View for Home Page """
     emotions = Emotion.objects.all()
-    return render(request, 'index.html',{'emotions': emotions})
+    return render(request, 'index.html', {'emotions': emotions})
 
 
 def merch(request):
@@ -84,7 +84,7 @@ def video_details(request, video_id):
     return render(request, 'core/video_details.html', {'video': video, 'most_common_emotion': most_common_emotion})
 
 
-#def chatbot(request):
+# def chatbot(request):
 #    emotions = Emotion.objects.all()
 #    return render(request, 'core/chat.html', {'emotions': emotions})
 #    # testing / chat переключатель
@@ -118,3 +118,13 @@ def save_emotion(request):
         return HttpResponse("Success")
     else:
         return HttpResponseBadRequest()
+
+
+def save_result(request):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
+        user = request.user
+        score = request.POST.get('score')
+        result = Result(user=user, score=score)
+        result.save()
+        return JsonResponse({'message': 'Результат сохранен успешно.'})
+    return JsonResponse({'message': 'Неверный метод запроса.'})
