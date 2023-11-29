@@ -858,25 +858,26 @@
 .site-main .banner-area .marquee-about-me-yellow-wrapper {
     position: absolute;
     top: 5rem;
-    left: -62.1rem;
+    left: -95rem;
     z-index: 3;
     display: flex;
+    height: 7rem;
     transform: rotate(90deg);
 }
 
 .site-main .banner-area .marquee-about-me-yellow-wrapper .marquee-about-me-yellow {
-    width: 133rem;
+    width: 200rem;
     
-    padding: .5rem 0rem;
+    
+    padding: 0rem 0rem;
     overflow: hidden;
 
-    color: #000;
-    text-align: center;
+    color: #050505;
     font-family: Druk Cyr;
-    font-size: 4rem;
+    font-size: 6rem;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
+    line-height: 6.5rem;
     text-transform: uppercase;
     user-select: none;
 
@@ -891,8 +892,6 @@
 
 .site-main .banner-area .subscriber-count-container .subscriber-count-item {
     position: relative;
-
-    background-color: green;
 }
 
 .site-main .banner-area .subscriber-count-container .subscriber-count-item h1 {
@@ -903,8 +902,6 @@
     font-weight: 500;
     line-height: normal;
     text-wrap: nowrap;
-
-    background-color: #F9ED5B;
 }
 
 .site-main .banner-area .subscriber-count-container .subscriber-count-item h2 {
@@ -951,6 +948,44 @@
     line-height: 2.5rem;
 }
 
+.site-main .banner-area .about-me-text-con {
+    position: relative;
+    width: 71rem;
+    height: 31rem;
+    padding: 6.8rem 3.75rem 0 11.5rem;
+    background-color: var(--gray-color);
+}
+
+.site-main .banner-area .about-me-text-con p {
+    padding-bottom: 2rem;
+
+    color: var(--black-color);
+    text-align: center;
+    font-family: Druk Cyr;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 98.858%; /* 3.95431rem */
+    letter-spacing: 0.16rem;
+}
+
+.site-main .banner-area .about-me-text-con h4 {
+    transform: rotate(-6deg);
+
+    color: var(--red-color);
+    text-align: center;
+    font-family: var(--danger);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148.858%; /* 4.46575rem */
+    letter-spacing: 0.21rem;
+}
+
+.site-main .banner-area .about-me-text-con img {
+    position: absolute;
+    bottom: 1rem; right: -5rem;
+}
 /* ========================================================================= */
 /* End Banner Area */
 
