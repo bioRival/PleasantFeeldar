@@ -10,11 +10,10 @@ from collections import Counter
 import random
 
 
-
-
 def index(request):
     """ View for Home Page """
-    return render(request, 'index.html')
+    emotions = Emotion.objects.all()
+    return render(request, 'index.html',{'emotions': emotions})
 
 
 def merch(request):
@@ -25,10 +24,6 @@ def merch(request):
 def about_me(request):
     """ View for About Me Page """
     return render(request, 'about-me.html')
-
-
-
-
 
 
 # Представление для регистрации
@@ -42,6 +37,7 @@ def register(request):
     else:
         form = RegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
+
 
 # Представление для выбора видео
 @login_required
@@ -88,10 +84,10 @@ def video_details(request, video_id):
     return render(request, 'core/video_details.html', {'video': video, 'most_common_emotion': most_common_emotion})
 
 
-def chatbot(request):
-    emotions = Emotion.objects.all()
-    return render(request, 'core/chat.html', {'emotions': emotions})
-    # testing / chat переключатель
+#def chatbot(request):
+#    emotions = Emotion.objects.all()
+#    return render(request, 'core/chat.html', {'emotions': emotions})
+#    # testing / chat переключатель
 
 
 def update_bot(request):
@@ -109,10 +105,9 @@ def update_bot(request):
 
 @login_required
 def save_emotion(request):
-    if request.method == 'POST':
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
         emotion_name = request.POST.get('emotion')
         video_title = request.POST.get('videoTitle')
-
         emotion = Emotion.objects.get(name=emotion_name)
         video = Content.objects.get(title=video_title)
         user = request.user
