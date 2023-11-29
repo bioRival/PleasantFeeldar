@@ -229,6 +229,7 @@ function openVideo(videoUrl) {
             <iframe src="${iframeUrl}" frameborder="0" allowfullscreen width="882" height="501"></iframe>
         </div>`;
     $('#video-list').append(videoHtml);
+}
 
 function saveEmotion(emotion_id, video_url) {
 var emotion = emotion_id;
