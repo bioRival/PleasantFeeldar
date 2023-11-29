@@ -548,6 +548,14 @@
     background-color: var(--black-color);
 }
 
+.site-main .chat-bot-area .chat-bot .chat-bot-col {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 57.8rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .site-main .chat-bot-area .chat-bot .text1 {
     color: var(--pink-color);
     font-family: Futura PT Cond Medium Italic;
@@ -637,6 +645,20 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.1575rem;
+}
+
+.site-main .chat-bot-area .snack-pick .chat-bot-menu .pick-more-button {
+    width: 16rem;
+    height: 3.5rem;
+    padding: 0.3rem 1rem;
+    background-color: var(--red-color);
+
+    color: #FFF;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 /* ========================== */
 /* Chat-bot subarea */

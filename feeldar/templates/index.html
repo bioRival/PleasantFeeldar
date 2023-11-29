@@ -99,7 +99,10 @@
         <div class="emotion-pick-container">
           {% for emotion in emotions %}
             <div class="emotion-pick-item">
-              <div class="emotion-pick-button" tooltip="{{ emotion.name }}">
+              <div class="emotion-pick-button" 
+                    tooltip="{{ emotion.name }}"
+                    data-emotion-id="{{ emotion.id }}"
+                    >
                 <img src="{% static '/img/emojis-gold/' %}{{ emotion.codename }}.png" alt="" />
               </div>
             </div>
@@ -144,142 +147,144 @@
       </div>
       <div class="chat-bot">
         <div class="pleasant-container">
-          <p class="text1">
-            Выбирай <span>НАСТРОЕНИЕ</span> и я подберу для тебя видео!
-          </p>
-          <p class="text2">
-            Добавим жести в эту непростую жизнь! ;) <br>
-            Оставь <span>РЕАКЦИЮ</span> под видео и я буду радовать тебя крутыми подборками
-          </p>
-          <div class="youtube-screen d-none">
-            <iframe class="youtube-iframe"
-            src="https://www.youtube.com/embed/jMfrWa0wuTw"
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-            </iframe>
-            <div class="rating">
-              <button class="rating-item rated">
-                <span>10</span>
-                <div class="emotion-funny"></div>
-              </button>
-              <button class="rating-item rated active">
-                <span>5</span>
-                <div class="emotion-cute"></div>
-              </button>
-              <button class="rating-item rated">
-                <span>3</span>
-                <div class="emotion-sad"></div>
-              </button>
-              <button class="rating-item rated">
-                <span>1</span>
-                <div class="emotion-sexy"></div>
-              </button>
-              <button class="rating-item">
-                <span></span>
-                <div class="emotion-scary"></div>
-              </button>
-              <button class="rating-item">
-                <span></span>
-                <div class="emotion-awkward"></div>
-              </button>
-              <button class="rating-item">
-                <span></span>
-                <div class="emotion-angry"></div>
-              </button>
-              <button class="rating-item">
-                <span></span>
-                <div class="emotion-nostalgic"></div>
-              </button>
-            </div>
-          </div>
-
-          <div class="video-pick">
-            <div class="video-item">
-              <img src="https://i.ytimg.com/vi/pmmKYciIfLk/mqdefault.jpg" alt="">
-              <div class="sub-rating">
-                <div class="rating-item">
-                  <span>12</span>
-                  <div class="emotion-funny"></div>
-                </div>
-                <div class="rating-item">
-                  <span>8</span>
-                  <div class="emotion-sad"></div>
-                </div>
-              </div>
-              <h4>ДЕТИ ЗА НАСЛЕДСТВО - МУЖСКОЕ ЖЕНСКОЕ</h4>
-            </div>
-            <div class="video-item">
-              <img src="https://i.ytimg.com/vi/Oqllfc5so5c/mqdefault.jpg" alt="">
-              <div class="sub-rating">
-                <div class="rating-item">
-                  <span>20</span>
-                  <div class="emotion-angry"></div>
-                </div>
-                <div class="rating-item">
-                  <span>2</span>
-                  <div class="emotion-funny"></div>
-                </div>
-                <div class="rating-item">
-                  <span>1</span>
-                  <div class="emotion-scary"></div>
-                </div>
-              </div>
-              <h4>СОСЕДИ НА ТРОПЕ ГОВНА - МУЖСКОЕ ЖЕНСКОЕ</h4>
-            </div>
-            <div class="video-item">
-              <img src="https://i.ytimg.com/vi/k9uFL3ubuqM/mqdefault.jpg" alt="">
-              <div class="sub-rating">
-                <div class="rating-item">
-                  <span>23</span>
-                  <div class="emotion-sad"></div>
-                </div>
-                <div class="rating-item">
-                  <span>11</span>
-                  <div class="emotion-sexy"></div>
-                </div>
-                <div class="rating-item">
-                  <span>5</span>
-                  <div class="emotion-funny"></div>
-                </div>
-              </div>
-              <h4>ПРИСТАВАЛ К ПАДЧЕРИЦЕ В БАНЕ - МУЖСКОЕ ЖЕНСКОЕ</h4>
-            </div>
-            <div class="video-item">
-              <img src="https://i.ytimg.com/vi/9ndCfEX0mCw/mqdefault.jpg" alt="">
-              <div class="sub-rating">
-                <div class="rating-item">
-                  <span>4</span>
-                  <div class="emotion-scary"></div>
-                </div>
-              </div>
-              <h4>ЗАДЕРЖАНИЕ ЧИКАТИЛО  -  КРИМИНАЛЬНАЯ РОССИЯ</h4>
-            </div>
-            <div class="video-item">
-              <img src="https://i.ytimg.com/vi/9ndCfEX0mCw/mqdefault.jpg" alt="">
-              <div class="sub-rating">
-                <div class="rating-item">
-                  <span>4</span>
-                  <div class="emotion-scary"></div>
-                </div>
-              </div>
-              <h4>ЗАДЕРЖАНИЕ ЧИКАТИЛО  -  КРИМИНАЛЬНАЯ РОССИЯ</h4>
-            </div>
-          </div>
-
-          <div class="snack-pick">
-            <p>
-              Знаешь почему видос стоит смотреть под хрустящие закуски? 
-              Если будет сильно страшно, твои ногти остануться целыми
+          <div class="chat-bot-col">
+            <p class="text1">
+              Выбирай <span>НАСТРОЕНИЕ</span> и я подберу для тебя видео!
             </p>
-            <div class="snack-images"></div>
-            <div class="chat-bot-menu">
-              <button class="pick-more-button">ПОДБЕРИ ЕЩЁ ВИДЕО</button>
+            <p class="text2">
+              Добавим жести в эту непростую жизнь! ;) <br>
+              Оставь <span>РЕАКЦИЮ</span> под видео и я буду радовать тебя крутыми подборками
+            </p>
+            <div class="youtube-screen">
+              <iframe class="youtube-iframe"
+              src="https://www.youtube.com/embed/jMfrWa0wuTw"
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+              </iframe>
+              <div class="rating">
+                <button class="rating-item rated">
+                  <span>10</span>
+                  <div class="emotion-funny"></div>
+                </button>
+                <button class="rating-item rated active">
+                  <span>5</span>
+                  <div class="emotion-cute"></div>
+                </button>
+                <button class="rating-item rated">
+                  <span>3</span>
+                  <div class="emotion-sad"></div>
+                </button>
+                <button class="rating-item rated">
+                  <span>1</span>
+                  <div class="emotion-sexy"></div>
+                </button>
+                <button class="rating-item">
+                  <span></span>
+                  <div class="emotion-scary"></div>
+                </button>
+                <button class="rating-item">
+                  <span></span>
+                  <div class="emotion-awkward"></div>
+                </button>
+                <button class="rating-item">
+                  <span></span>
+                  <div class="emotion-angry"></div>
+                </button>
+                <button class="rating-item">
+                  <span></span>
+                  <div class="emotion-nostalgic"></div>
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div id="video-list">
+            <div class="video-pick">
+              <div class="video-item">
+                <img src="https://i.ytimg.com/vi/pmmKYciIfLk/mqdefault.jpg" alt="">
+                <div class="sub-rating">
+                  <div class="rating-item">
+                    <span>12</span>
+                    <div class="emotion-funny"></div>
+                  </div>
+                  <div class="rating-item">
+                    <span>8</span>
+                    <div class="emotion-sad"></div>
+                  </div>
+                </div>
+                <h4>ДЕТИ ЗА НАСЛЕДСТВО - МУЖСКОЕ ЖЕНСКОЕ</h4>
+              </div>
+              <div class="video-item">
+                <img src="https://i.ytimg.com/vi/Oqllfc5so5c/mqdefault.jpg" alt="">
+                <div class="sub-rating">
+                  <div class="rating-item">
+                    <span>20</span>
+                    <div class="emotion-angry"></div>
+                  </div>
+                  <div class="rating-item">
+                    <span>2</span>
+                    <div class="emotion-funny"></div>
+                  </div>
+                  <div class="rating-item">
+                    <span>1</span>
+                    <div class="emotion-scary"></div>
+                  </div>
+                </div>
+                <h4>СОСЕДИ НА ТРОПЕ ГОВНА - МУЖСКОЕ ЖЕНСКОЕ</h4>
+              </div>
+              <div class="video-item">
+                <img src="https://i.ytimg.com/vi/k9uFL3ubuqM/mqdefault.jpg" alt="">
+                <div class="sub-rating">
+                  <div class="rating-item">
+                    <span>23</span>
+                    <div class="emotion-sad"></div>
+                  </div>
+                  <div class="rating-item">
+                    <span>11</span>
+                    <div class="emotion-sexy"></div>
+                  </div>
+                  <div class="rating-item">
+                    <span>5</span>
+                    <div class="emotion-funny"></div>
+                  </div>
+                </div>
+                <h4>ПРИСТАВАЛ К ПАДЧЕРИЦЕ В БАНЕ - МУЖСКОЕ ЖЕНСКОЕ</h4>
+              </div>
+              <div class="video-item">
+                <img src="https://i.ytimg.com/vi/9ndCfEX0mCw/mqdefault.jpg" alt="">
+                <div class="sub-rating">
+                  <div class="rating-item">
+                    <span>4</span>
+                    <div class="emotion-scary"></div>
+                  </div>
+                </div>
+                <h4>ЗАДЕРЖАНИЕ ЧИКАТИЛО  -  КРИМИНАЛЬНАЯ РОССИЯ</h4>
+              </div>
+              <div class="video-item">
+                <img src="https://i.ytimg.com/vi/9ndCfEX0mCw/mqdefault.jpg" alt="">
+                <div class="sub-rating">
+                  <div class="rating-item">
+                    <span>4</span>
+                    <div class="emotion-scary"></div>
+                  </div>
+                </div>
+                <h4>ЗАДЕРЖАНИЕ ЧИКАТИЛО  -  КРИМИНАЛЬНАЯ РОССИЯ</h4>
+              </div>
+            </div>
+
+            <div class="snack-pick">
+              <p>
+                Знаешь почему видос стоит смотреть под хрустящие закуски? 
+                Если будет сильно страшно, твои ногти остануться целыми
+              </p>
+              <div class="snack-images"></div>
+              <div class="chat-bot-menu">
+                <button class="pick-more-button">ПОДБЕРИ ЕЩЁ ВИДЕО</button>
+              </div>
+            </div>
+
+            <div id="video-list">
+            </div>
           </div>
         <!--
           {% for emotion in emotions %}

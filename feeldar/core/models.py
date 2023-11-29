@@ -4,11 +4,23 @@ from django.contrib.auth.models import User
 
 class Content(models.Model):
     title = models.CharField(max_length=255)  # заголовок видео
-    url = models.CharField(max_length=255, blank=True)  # URL видео на Youtube
+    youtube_id = models.CharField(max_length=255, blank=True)  # ID видео на Youtube
     emotions = models.ManyToManyField('Emotion', through='ContentEmotion')  # связь многие ко многим
+    
+    emotion_funny = models.IntegerField(default=0)
+    emotion_cute = models.IntegerField(default=0)
+    emotion_sad = models.IntegerField(default=0)
+    emotion_sexy = models.IntegerField(default=0)
+    emotion_scary = models.IntegerField(default=0)
+    emotion_awkward = models.IntegerField(default=0)
+    emotion_nostalgic = models.IntegerField(default=0)
+    emotion_angry = models.IntegerField(default=0)
+
 
     def __str__(self):
         return self.title
+
+
 
 
 class Emotion(models.Model):

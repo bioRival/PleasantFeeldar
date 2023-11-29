@@ -237,6 +237,7 @@ $(document).ready(function () {
 
 
         var emotion_id = $(this).data('emotion-id');
+        console.log(emotion_id);
         $.ajax({
             url: 'update_bot',
             type: 'GET',
@@ -244,9 +245,9 @@ $(document).ready(function () {
             success: function (response) {
                 $('#video-list').empty();
                 response.contents.forEach(function (video) {
-                    var videoUrl = 'https://www.youtube.com/embed/' + video.url;
-                    var imgUrl = 'https://img.youtube.com/vi/' + video.url + '/mqdefault.jpg';
-                    $('#video-list').append('<div><h3>' + video.url + '</h3><img src="' + imgUrl + '" width="320" height="180" onclick="openVideo(\'' + video.url + '\')"></div>');
+                    // var videoUrl = 'https://www.youtube.com/embed/' + video.url;
+                    var imgUrl = 'https://i.ytimg.com/vi/' + video.youtube_id + '/mqdefault.jpg';
+                    $('#video-list').append('<div><h3>' + video.title + '</h3><img src="' + imgUrl + '" width="320" height="180" onclick="openVideo(\'' + video.youtube_id + '\')"></div>');
                 });
             }
         });
