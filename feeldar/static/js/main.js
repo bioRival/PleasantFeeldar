@@ -331,8 +331,6 @@ $(document).ready(function () {
         // GET
         getVideoList(emotion_id);
     });
-
-    showPickMode();
     // End Chat-bot Logic
     // ========================================================================================= 
 });
