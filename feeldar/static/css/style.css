@@ -541,6 +541,106 @@
 /* ========================== */
 /* End Chat Bot Introduction subarea */
 
+/* Chat-bot subarea */
+/* ========================== */
+.site-main .chat-bot-area .chat-bot {
+    height: 57.8rem;
+    background-color: var(--black-color);
+}
+
+.site-main .chat-bot-area .chat-bot .text1 {
+    color: var(--pink-color);
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.21rem;
+    text-align: left;
+}
+
+.site-main .chat-bot-area .chat-bot .text2 {
+    color: var(--pink-color);
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1575rem;
+    text-align: center;
+}
+
+.site-main .chat-bot-area .chat-bot .text1 span,
+.site-main .chat-bot-area .chat-bot .text2 span {
+    color: var(--yellow-color);
+    text-transform: uppercase;
+}
+
+.site-main .chat-bot-area .video-pick {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.4rem;
+    justify-content: space-between;
+}
+
+.site-main .chat-bot-area .video-pick .video-item {
+    width: 230px;
+    cursor: pointer;
+    transition: transform .5s ease;
+}
+
+.site-main .chat-bot-area .video-pick .video-item:hover {
+    transform: scale(1.2);
+}
+
+.site-main .chat-bot-area .video-pick .video-item img {
+    width: 100%;
+}
+
+.site-main .chat-bot-area .video-pick .video-item h4 {
+    padding-top: .1rem;
+    color: #FFF;
+    font-family: Futura PT Cond;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.site-main .chat-bot-area .video-pick .video-item .sub-rating {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .2rem;
+}
+
+.site-main .chat-bot-area .video-pick .video-item .sub-rating .rating-item {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.site-main .chat-bot-area .video-pick .video-item .sub-rating .rating-item {
+    color: var(--gray-color);
+    font-family: Futura PT Cond Medium Italic;
+}
+
+.site-main .chat-bot-area .snack-pick {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.site-main .chat-bot-area .snack-pick p {
+    color: var(--pink-color);
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1575rem;
+}
+/* ========================== */
+/* Chat-bot subarea */
+
 /* ========================================================================= */
 /* End Chat-bot Area */
 

@@ -19,9 +19,6 @@ $(document).ready(function () {
             }
         }
     }
-    $('.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item .emotion-pick-button').click({
-        clearClass: '.site-main .chat-bot-area .emotion-pick-container .emotion-pick-item .emotion-pick-button',
-    }, toggleActive);
 
     // Footer Marquee Red Line
     $('.footer-area .marquee-area .footer-red-line').marquee({
@@ -223,7 +220,22 @@ $(document).ready(function () {
 
 
     // Chat-bot Logic
-    $('.site-main .chat-bot-area .chat-bot .chat_butt').on('click', function () {
+    $('.site-main .chat-bot-area .emotion-pick-button').on('click', function () {
+        
+        // Closing intro part
+        $('.site-main .chat-bot-area .chat-bot-intro').addClass('d-none');
+        // Toggle Active Class Effect
+        btn = $(this);
+        if (btn.hasClass('active')) {
+            btn.removeClass('active');
+        } else {
+            $('.site-main .chat-bot-area .emotion-pick-button').removeClass('active');
+            btn.addClass('active');
+        }
+        
+
+
+
         var emotion_id = $(this).data('emotion-id');
         $.ajax({
             url: 'update_bot',
