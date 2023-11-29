@@ -175,18 +175,18 @@
         </div>
         <img src="{% static '/img/bg-snack.png' %}" alt="" class="bg-snack" />
       </div>
-
-    </section>
-    <section class="chat-bot-2">
       <div class="chat-bot">
         <div>
         {% for emotion in emotions %}
-            <button class="chat_butt" data-emotion="{{ emotion.name }}">{{ emotion.name }}</button>
+            <button class="chat_butt" data-emotion="{{ emotion.codename }}">{{ emotion.name }}</button>
         {% endfor %}
         </div>
         <div id="video-list">
         </div>
       </div>
+    </section>
+    <section class="chat-bot-2">
+
     </section>
     <!-- ====================================================================== -->
     <!-- End Chat-bot Area -->
