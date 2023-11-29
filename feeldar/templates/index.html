@@ -109,7 +109,7 @@
           {% endfor %}
         </div>
       </div>
-      <div class="container-fluid chat-bot-intro d-none">
+      <div class="container-fluid chat-bot-intro">
         <div class="pleasant-container">
           <div class="d-flex justify-content-end">
             <div class="top-banner-container">
@@ -145,7 +145,7 @@
         </div>
         <img src="{% static '/img/bg-snack.png' %}" alt="" class="bg-snack" />
       </div>
-      <div class="chat-bot">
+      <div class="chat-bot d-none">
         <div class="pleasant-container">
           <div class="chat-bot-col">
             <p class="text1">
@@ -155,7 +155,7 @@
               Добавим жести в эту непростую жизнь! ;) <br>
               Оставь <span>РЕАКЦИЮ</span> под видео и я буду радовать тебя крутыми подборками
             </p>
-            <div class="youtube-screen">
+            <div class="youtube-screen d-none">
               <iframe class="youtube-iframe"
               src="https://www.youtube.com/embed/jMfrWa0wuTw"
               title="YouTube video player" 
@@ -166,35 +166,35 @@
               <div class="rating">
                 <button class="rating-item rated">
                   <span>10</span>
-                  <div class="emotion-funny"></div>
+                  <span class="emotion-funny"></span>
                 </button>
                 <button class="rating-item rated active">
                   <span>5</span>
-                  <div class="emotion-cute"></div>
+                  <span class="emotion-cute"></span>
                 </button>
                 <button class="rating-item rated">
                   <span>3</span>
-                  <div class="emotion-sad"></div>
+                  <span class="emotion-sad"></span>
                 </button>
                 <button class="rating-item rated">
                   <span>1</span>
-                  <div class="emotion-sexy"></div>
+                  <span class="emotion-sexy"></span>
                 </button>
                 <button class="rating-item">
                   <span></span>
-                  <div class="emotion-scary"></div>
+                  <span class="emotion-scary"></span>
                 </button>
                 <button class="rating-item">
                   <span></span>
-                  <div class="emotion-awkward"></div>
+                  <span class="emotion-awkward"></span>
                 </button>
                 <button class="rating-item">
                   <span></span>
-                  <div class="emotion-angry"></div>
+                  <span class="emotion-angry"></span>
                 </button>
                 <button class="rating-item">
                   <span></span>
-                  <div class="emotion-nostalgic"></div>
+                  <span class="emotion-nostalgic"></span>
                 </button>
               </div>
             </div>
@@ -273,24 +273,20 @@
             </div>
 
             <div class="snack-pick">
-              <p>
+              <p class="">
                 Знаешь почему видос стоит смотреть под хрустящие закуски? 
                 Если будет сильно страшно, твои ногти остануться целыми
               </p>
-              <div class="snack-images"></div>
+              <div class="snack-images">
+                <img src="{% static '/img/snacks/bar1.png' %}" alt="">
+                <img src="{% static '/img/snacks/bar2.png' %}" alt="">
+              </div>
               <div class="chat-bot-menu">
+                <button class="back-to-pick-button d-none">Назад</button>
                 <button class="pick-more-button">ПОДБЕРИ ЕЩЁ ВИДЕО</button>
               </div>
             </div>
-
-            <div id="video-list">
-            </div>
           </div>
-        <!--
-          {% for emotion in emotions %}
-            <button class="chat_butt" data-emotion="{{ emotion.codename }}">{{ emotion.name }}</button>
-          {% endfor %}
-        -->
         </div>
       </div>
     </section>

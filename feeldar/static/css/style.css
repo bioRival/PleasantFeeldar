@@ -544,7 +544,8 @@
 /* Chat-bot subarea */
 /* ========================== */
 .site-main .chat-bot-area .chat-bot {
-    height: 57.8rem;
+    min-height: 57.8rem;
+    padding-bottom: .5rem;
     background-color: var(--black-color);
 }
 
@@ -582,6 +583,40 @@
 .site-main .chat-bot-area .chat-bot .text2 span {
     color: var(--yellow-color);
     text-transform: uppercase;
+}
+
+.site-main .chat-bot-area .youtube-screen {
+    flex: auto;
+}
+
+.site-main .chat-bot-area .youtube-screen .youtube-iframe {
+    width: 1280px;
+    height: 720px;
+}
+
+.site-main .chat-bot-area .youtube-screen .rating {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+.site-main .chat-bot-area .youtube-screen .rating .rating-item {
+    color: #FFF;
+    font-family: Futura PT Cond;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    opacity: 0.6;
+}
+
+.site-main .chat-bot-area .youtube-screen .rating .rating-item.rated {
+    opacity: 1;
+}
+
+.site-main .chat-bot-area .youtube-screen .rating .rating-item:hover {
+    filter: brightness(1.2);
+    opacity: 1;
 }
 
 .site-main .chat-bot-area .video-pick {
@@ -638,6 +673,8 @@
 }
 
 .site-main .chat-bot-area .snack-pick p {
+    max-width: 30rem;
+
     color: var(--pink-color);
     font-family: Futura PT Cond Medium Italic;
     font-size: 2.25rem;
@@ -647,7 +684,36 @@
     letter-spacing: 0.1575rem;
 }
 
+.site-main .chat-bot-area .snack-pick .snack-images {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.site-main .chat-bot-area .snack-pick .snack-images img {
+    max-height: 200px;
+}
+
+.site-main .chat-bot-area .snack-pick .chat-bot-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
 .site-main .chat-bot-area .snack-pick .chat-bot-menu .pick-more-button {
+    width: 16rem;
+    height: 3.5rem;
+    padding: 0.3rem 1rem;
+    background-color: var(--red-color);
+
+    color: #FFF;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.site-main .chat-bot-area .chat-bot-menu .back-to-pick-button {
     width: 16rem;
     height: 3.5rem;
     padding: 0.3rem 1rem;

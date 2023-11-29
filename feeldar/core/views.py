@@ -84,14 +84,16 @@ def video_details(request, video_id):
     return render(request, 'core/video_details.html', {'video': video, 'most_common_emotion': most_common_emotion})
 
 
-#def chatbot(request):
-#    emotions = Emotion.objects.all()
-#    return render(request, 'core/chat.html', {'emotions': emotions})
-#    # testing / chat переключатель
 
 
+
+# Chat-bot functions
+# =========================================================================================
 def get_videos(emotion_id):
-    """ Picks 5 videos based on given emotion """
+    """ 
+    Picks 5 videos based on given emotion, 
+    if video has > 0 of that emotion it will be in the list 
+    """
     emotion = Emotion.objects.get(id=emotion_id)
     filters = {f"emotion_{emotion.codename}__gt": 0}
     result = Content.objects.filter(**filters).order_by('?')[:5]
@@ -100,39 +102,25 @@ def get_videos(emotion_id):
 
 def get_top3_emotions(content):
     """ Picks 3 top emotions from a given video, returns dictionary {name: amount} """
-    # Getting all emotion values
-    emotion_dict = {
-        'funny': content.emotion_funny,
-        'cute': content.emotion_cute,
-        'sad': content.emotion_sad,
-        'sexy': content.emotion_sexy,
-        'scary': content.emotion_scary,
-        'awkward': content.emotion_awkward,
-        'nostalgic': content.emotion_nostalgic,
-        'angry': content.emotion_angry,
-    }
-
-    # Sorting all emotions by value, then picking first 3
-    emotion_dict = dict(sorted(emotion_dict.items(), key=lambda item: item[1], reverse = True)[:3])
-    return emotion_dict
+    # Needs development
+    return False
 
 
 def update_bot(request):
+    """ Sends a Json with 5 videos """
     if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'GET':
         emotion_id = request.GET.get('emotion_id')
         if emotion_id:
             content_list = get_videos(emotion_id)
         else:
-            content_list = Content.objects.order_by('?')[:5]
+            content_list = Content.objects.all().order_by('?')[:5]
         contents = []
         for content in content_list:
             contents.append({
                 'youtube_id': content.youtube_id, 
                 'title': content.title,
-                'emotion_dict': get_top3_emotions(content),
             })
-        # contents = [{'youtube_id': content.youtube_id, 'title': content.title} for content in content_list]
-        # print(contents)
+
         return JsonResponse({'contents': contents}, status=200)
     else:
         return JsonResponse({}, status=400)
@@ -153,3 +141,6 @@ def save_emotion(request):
         return HttpResponse("Success")
     else:
         return HttpResponseBadRequest()
+    
+# =========================================================================================
+# End Chat-bot Functions

@@ -1,3 +1,50 @@
+// Chat-bot Logic part 1
+// ========================================================================================= 
+
+// Stores picked emotion
+var EMOTION = undefined;
+
+// Shows current video as iframe in 1280x720, hides some elements
+function showVideoMode() {
+    $('.site-main .chat-bot-area .chat-bot-intro').addClass('d-none');
+    $('.site-main .chat-bot-area .chat-bot').removeClass('d-none');
+
+    $('.site-main .chat-bot-area .text2').addClass('d-none');
+    $('.site-main .chat-bot-area .youtube-screen').removeClass('d-none');
+    $('.site-main .chat-bot-area .video-pick').addClass('d-none');
+    $('.site-main .chat-bot-area .snack-pick p').addClass('d-none');
+    $('.site-main .chat-bot-area .snack-pick .snack-images').addClass('d-none');
+    $('.site-main .chat-bot-area .chat-bot-menu .pick-more-button').addClass('d-none');
+    $('.site-main .chat-bot-area .chat-bot-menu .back-to-pick-button').removeClass('d-none');
+}
+
+// Shows video and snacks picking rows, hides iframe, opposite to showVideoMode
+function showPickMode() {
+    $('.site-main .chat-bot-area .chat-bot-intro').addClass('d-none');
+    $('.site-main .chat-bot-area .chat-bot').removeClass('d-none');
+
+    $('.site-main .chat-bot-area .text2').removeClass('d-none');
+    $('.site-main .chat-bot-area .youtube-screen').addClass('d-none');
+    $('.site-main .chat-bot-area .video-pick').removeClass('d-none');
+    $('.site-main .chat-bot-area .snack-pick p').removeClass('d-none');
+    $('.site-main .chat-bot-area .snack-pick .snack-images').removeClass('d-none');
+    $('.site-main .chat-bot-area .chat-bot-menu .pick-more-button').removeClass('d-none');
+    $('.site-main .chat-bot-area .chat-bot-menu .back-to-pick-button').addClass('d-none');
+}
+
+// Changes iframe source as given
+function openVideo(videoUrl) {
+    showVideoMode();
+    $('.site-main .chat-bot-area .youtube-screen .youtube-iframe').attr("src", videoUrl);
+}
+// ========================================================================================= 
+// End Chat-bot Logic part 1
+
+
+
+
+
+
 $(document).ready(function () {
     // GLOBAL
     // =============================================================
@@ -219,53 +266,90 @@ $(document).ready(function () {
 
 
 
-    // Chat-bot Logic
-    $('.site-main .chat-bot-area .emotion-pick-button').on('click', function () {
-        
-        // Closing intro part
-        $('.site-main .chat-bot-area .chat-bot-intro').addClass('d-none');
-        // Toggle Active Class Effect
-        btn = $(this);
-        if (btn.hasClass('active')) {
-            btn.removeClass('active');
-        } else {
-            $('.site-main .chat-bot-area .emotion-pick-button').removeClass('active');
-            btn.addClass('active');
-        }
-        
 
-
-
-        var emotion_id = $(this).data('emotion-id');
-        console.log(emotion_id);
+    // Chat-bot Logic part 2
+    // ========================================================================================= 
+    function getVideoList(emotion_id) {
+        showPickMode();
+        $('.site-main .chat-bot-area .video-pick').empty();
         $.ajax({
             url: 'update_bot',
             type: 'GET',
             data: { 'emotion_id': emotion_id },
             success: function (response) {
-                $('#video-list').empty();
                 response.contents.forEach(function (video) {
-                    // var videoUrl = 'https://www.youtube.com/embed/' + video.url;
-                    var imgUrl = 'https://i.ytimg.com/vi/' + video.youtube_id + '/mqdefault.jpg';
-                    $('#video-list').append('<div><h3>' + video.title + '</h3><img src="' + imgUrl + '" width="320" height="180" onclick="openVideo(\'' + video.youtube_id + '\')"></div>');
+                    $('.site-main .chat-bot-area .video-pick').append(`
+                        <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/${video.youtube_id}')">
+                            <img src='https://i.ytimg.com/vi/${video.youtube_id}/mqdefault.jpg' alt="">
+                            <div class="sub-rating">
+                            <div class="rating-item">
+                                <span>12</span>
+                                <div class="emotion-funny"></div>
+                            </div>
+                            <div class="rating-item">
+                                <span>8</span>
+                                <div class="emotion-sad"></div>
+                            </div>
+                            </div>
+                            <h4>${video.title}</h4>
+                        </div>
+                    `);
                 });
             }
         });
+    }
+    
+    // Pick-more-button, uses stored emotion_id to pick 5 more videos
+    $('.site-main .chat-bot-area .snack-pick .chat-bot-menu .pick-more-button').on('click', function () {
+        getVideoList(EMOTION);
     });
+
+
+    // Click on Video
+    $('.site-main .chat-bot-area .chat-bot-menu .back-to-pick-button').click(showPickMode);
+
+
+    // Click on "ЖМИ" start button
+    $('.site-main .chat-bot-area .chat-bot-intro .chat-bot-start-button').on('click', function () {
+        getVideoList();
+    });
+
+
+    // Emotion-pick-button, gets 5 videos based on clicked button
+    $('.site-main .chat-bot-area .emotion-pick-button').on('click', function () {        
+        // Toggles active class effect on emotion picking buttons
+        btn = $(this);
+        $('.site-main .chat-bot-area .emotion-pick-button').removeClass('active');
+        btn.addClass('active');
+
+        // Emotion Id from data-emotion-id on clicked button
+        var emotion_id = $(this).data('emotion-id');
+
+        // Remembers the choice for re-pick function
+        EMOTION = emotion_id;
+
+        // GET
+        getVideoList(emotion_id);
+    });
+
+    showPickMode();
+    // End Chat-bot Logic
+    // ========================================================================================= 
 });
 
 
-//сделал глобальной чтобы не возникало проблем с маршрутами
-function openVideo(videoUrl) {
-    $('#video-list').empty();
-    var iframeUrl = '//www.youtube.com/embed/' + videoUrl;
-    var videoHtml = `
-        <div>
-            <iframe src="${iframeUrl}" frameborder="0" allowfullscreen width="882" height="501"></iframe>
-        </div>`;
-    $('#video-list').append(videoHtml);
-}
 
+
+
+
+
+
+
+
+
+
+
+// Unused
 function saveEmotion(emotion_id, video_url) {
     var emotion = emotion_id;
     var videoTitle = video_url.split('/').pop();
