@@ -737,6 +737,7 @@
 /* Anonymous Box Area */
 /* ========================================================================= */
 .site-main .anon-box-area {
+    position: relative;
     background-color: var(--black-color);
 }
 
@@ -800,6 +801,7 @@
     width: 18.8rem;
     height: 4.7rem;
     margin: 4rem auto;
+    padding: 0.4rem 1.3rem;
     background-color: var(--red-color);
 
     color: #FFF;
@@ -808,20 +810,31 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-transform: uppercase;
 }
 
 .site-main .anon-box-area .anon-box {
     display: flex;
     flex-flow: row wrap;
+    
+}
+
+.site-main .anon-box-area .anon-box img {
+    width: 458px;
+    height: 458px;
 }
 
 .site-main .anon-box-area .anon-box .anon-box-container {
     flex: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10rem;
+    
 }
 
 .site-main .anon-box-area .anon-box .anon-box-container .quote-container .quote-text {
     color: #FFF;
-    text-align: center;
+    text-align: left;
     font-family: Futura PT Cond;
     font-size: 3.125rem;
     font-style: normal;
@@ -832,6 +845,35 @@
 
 .site-main .anon-box-area .anon-box .anon-box-container .quote-container .quote-angles {
     color: var(--red-color);
+}
+
+.site-main .anon-box-area .show-more-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem 0 6rem 0;
+}
+
+.site-main .anon-box-area .show-more-button {
+    display: inline-flex;
+    padding: 0.4rem 8.1rem 0.4rem 8rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border: 5px solid var(--yellow-color);
+
+    color: var(--red-color);
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.site-main .anon-box-area .pink-smile-img {
+    position: absolute;
+    bottom: -7rem; left: 30rem;
+    opacity: .5;
 }
 /* ========================================================================= */
 /* End Anonymous Box Area */
