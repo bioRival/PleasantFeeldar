@@ -993,8 +993,7 @@
 
 .footer-area .marquee-area .footer-line {
     height: 5.5rem;
-    width: 100%;
-    box-shadow: 23px 16px 9.1px 0px rgba(0, 0, 0, 0.50);
+
 
     color: #000;
     font-family: Druk Cyr;
@@ -1012,16 +1011,29 @@
     padding-bottom: 8rem;
 }
 
-.footer-area .marquee-area .footer-red-line {
+.footer-area .marquee-area .footer-red-line-wrapper {
     background-color: var(--red-color);
     transform: skewY(-6deg);
+    width: 100%;
+    box-shadow: 23px 16px 9.1px 0px rgba(0, 0, 0, 0.50);
 }
 
-.footer-area .marquee-area .footer-yellow-line {
+.footer-area .marquee-area .footer-red-line {
+    transform: skewY(6deg) rotate(-6deg);
+}
+
+.footer-area .marquee-area .footer-yellow-line-wrapper {
     position: absolute;
     top: -.5rem;
     transform: skewY(3deg);
+    width: 100%;
     background-color: var(--yellow-color);
+    box-shadow: 23px 16px 9.1px 0px rgba(0, 0, 0, 0.50);
+}
+
+.footer-area .marquee-area .footer-yellow-line {
+    transform: skewY(-3deg) rotate(3deg);
+    
 }
 /* ========================================================================= */
 /* End Footer Area */
@@ -1174,6 +1186,33 @@
 .site-main .banner-area .about-me-text-con img {
     position: absolute;
     bottom: 1rem; right: -5rem;
+}
+
+.site-main .banner-area .marquee-about-me-wrapper1 {
+    position: absolute;
+    top: 54rem; left: -.3rem;
+    width: 100%;
+    transform: skewY(11deg);
+    background-color: var(--red-color);
+}
+
+.site-main .banner-area .marquee-about-me-red1 {
+    transform: skew(-11deg);
+
+    color: #FFF;
+    text-align: center;
+    font-family: Futura PT Cond;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-wrap: nowrap;
+    overflow: hidden;
+    user-select: none;
+}
+
+.site-main .banner-area .marquee-about-me-red1 span {
+    padding: 0 2.2rem;
 }
 /* ========================================================================= */
 /* End Banner Area */
