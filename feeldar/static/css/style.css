@@ -575,13 +575,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: 0.1575rem;
-    text-align: center;
 }
 
 .site-main .chat-bot-area .chat-bot .text1 span,
 .site-main .chat-bot-area .chat-bot .text2 span {
     color: var(--yellow-color);
+    letter-spacing: 0.14rem;
     text-transform: uppercase;
 }
 
@@ -641,14 +640,12 @@
 }
 
 .site-main .chat-bot-area .video-pick .video-item h4 {
-    padding-top: .1rem;
     color: #FFF;
-    font-family: Futura PT Cond;
-    font-size: 1.3rem;
+    font-family: Helvetica;
+    font-size: 1.25rem;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 400;
     line-height: normal;
-    letter-spacing: .8px;
 }
 
 .site-main .chat-bot-area .video-pick .video-item .sub-rating {
@@ -678,11 +675,11 @@
 
     color: var(--pink-color);
     font-family: Futura PT Cond Medium Italic;
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    letter-spacing: 0.1575rem;
+    letter-spacing: 0.14rem;
 }
 
 .site-main .chat-bot-area .snack-pick .snack-images {
@@ -760,7 +757,7 @@
 }
 
 .site-main .anon-box-area .title-text h1 span {
-    color: #FAED5B;
+    color: var(--yellow-color);
     text-transform: uppercase;
 }
 
