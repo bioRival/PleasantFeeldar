@@ -644,10 +644,11 @@
     padding-top: .1rem;
     color: #FFF;
     font-family: Futura PT Cond;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
+    letter-spacing: .8px;
 }
 
 .site-main .chat-bot-area .video-pick .video-item .sub-rating {
@@ -731,6 +732,109 @@
 
 /* ========================================================================= */
 /* End Chat-bot Area */
+
+
+/* Anonymous Box Area */
+/* ========================================================================= */
+.site-main .anon-box-area {
+    background-color: var(--black-color);
+}
+
+.site-main .anon-box-area .title-text {
+    padding-top: 3rem;
+}
+
+.site-main .anon-box-area .title-text h1 {
+    padding: 2rem 0 2rem 0;
+
+    color: var(--pink-color);
+    font-family: Druk Cyr;
+    font-size: 5.42675rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 98.858%; /* 5.36481rem */
+    letter-spacing: 0.21706rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.site-main .anon-box-area .title-text h1 span {
+    color: #FAED5B;
+    text-transform: uppercase;
+}
+
+.site-main .anon-box-area .anon-box-form {
+    padding-top: 4.5rem;
+}
+
+.site-main .anon-box-area .anon-box-form .anon-box-textarea {
+    width: 100%;
+    height: 15rem;
+    padding: 1.3rem 2.4rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    resize: none;
+    
+    color: var(--black-color);
+    text-align: left;
+    font-family: Druk Cyr;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 98.858%; /* 3.95431rem */
+    letter-spacing: 0.16rem;
+}
+
+.site-main .anon-box-area .anon-box-form .anon-box-textarea:focus {
+    outline: none;
+}
+
+.site-main .anon-box-area .anon-box-form .anon-box-textarea::placeholder {
+    color: var(--gray-color);
+}
+
+.site-main .anon-box-area .anon-box-form .send-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18.8rem;
+    height: 4.7rem;
+    margin: 4rem auto;
+    background-color: var(--red-color);
+
+    color: #FFF;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.site-main .anon-box-area .anon-box {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.site-main .anon-box-area .anon-box .anon-box-container {
+    flex: 2;
+}
+
+.site-main .anon-box-area .anon-box .anon-box-container .quote-container .quote-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Futura PT Cond;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 98.858%; /* 3.08931rem */
+    letter-spacing: 0.21875rem;
+}
+
+.site-main .anon-box-area .anon-box .anon-box-container .quote-container .quote-angles {
+    color: var(--red-color);
+}
+/* ========================================================================= */
+/* End Anonymous Box Area */
 
 
 /* Games List Area */
