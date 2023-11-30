@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_GET
 
-from .models import Content, Emotion, ContentEmotion
+from .forms import AnonymousTextForm
+from .models import Content, Emotion, ContentEmotion, AnonymousText
 from collections import Counter
 import random
 
@@ -22,21 +23,27 @@ def merch(request):
 
 
 def about_me(request):
-    """ View for About Me Page """
-    return render(request, 'about-me.html')
+    form = AnonymousTextForm()
 
+    # Получение всех текстов из базы данных
+    all_texts = list(AnonymousText.objects.all())
 
-# Представление для регистрации
-def register(request):
+    # Получение случайных текстов
+    random_texts = random.sample(all_texts, min(3, len(all_texts))) if all_texts else []
+
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        form = AnonymousTextForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('select_video')
-    else:
-        form = RegistrationForm()
-    return render(request, 'registration/register.html', {'form': form})
+            form.save()
+            return redirect('about_me')
+
+    return render(request, 'about-me.html', {'form': form, 'texts': random_texts})
+
+
+def list_boxes(request):
+    # Получение всех текстов из базы данных
+    texts = AnonymousText.objects.all()
+    return render(request, 'list_boxes.html', {'texts': texts})
 
 
 # Представление для выбора видео

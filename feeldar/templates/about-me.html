@@ -67,8 +67,9 @@
           <h1>Отзывы, выплеск эмоций, любой кринж <span>ИНКОГНИТО</span></h1>
           <h1>Вэлкам!</h1>
         </div>
-        <form action="" class="anon-box-form">
-          <textarea class="anon-box-textarea" placeholder="Напиши..."></textarea>
+        <form  action="{% url 'about_me' %}" method="POST" class="anon-box-form">
+          {% csrf_token %}
+          <textarea class="anon-box-textarea" name="text" id="id_text" placeholder="Напиши..."></textarea>
           <button class="send-button">Запускай</button>
         </form>
         <div class="anon-box">
@@ -76,52 +77,27 @@
           <div class="anon-box-container">
 
             <!-- Message unit -->
+            {% for text in texts %}
             <div class="quote-container">
               <div class="quote-angles">
                 <i class="fa-solid fa-angles-left"></i>
               </div>
               <div class="quote-text">
-                До чего техника дошла, Ильдара и там и тут передают
+                {{ text.text }}
               </div>
               <div class="quote-angles">
                 <i class="fa-solid fa-angles-right"></i>
               </div>
             </div>
             <!-- Message unit -->
-
-            <!-- Message unit -->
-            <div class="quote-container">
-              <div class="quote-angles">
-                <i class="fa-solid fa-angles-left"></i>
-              </div>
-              <div class="quote-text">
-                Я так искринне улыбаюсь каждый раз
-                твоему посту или видео,что лицо болит
-              </div>
-              <div class="quote-angles">
-                <i class="fa-solid fa-angles-right"></i>
-              </div>
-            </div>
-            <!-- Message unit -->
-
-            <!-- Message unit -->
-            <div class="quote-container">
-              <div class="quote-angles">
-                <i class="fa-solid fa-angles-left"></i>
-              </div>
-              <div class="quote-text">
-                Шокирующий продуктивностью Ильдар
-              </div>
-              <div class="quote-angles">
-                <i class="fa-solid fa-angles-right"></i>
-              </div>
-            </div>
+            {% endfor %}
             <!-- Message unit -->
           </div>
         </div>
         <div class="show-more-wrapper">
-          <button class="show-more-button">Хочу еще</button>
+            <a href="{% url 'list-boxes' %}" class="show-more-button">Хочу еще</a>
         </div>
+
         
       </div>
 
