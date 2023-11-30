@@ -47,3 +47,11 @@ class ContentEmotion(models.Model):
 
     def __str__(self):
         return f"{self.video.title} -> {self.emotion.name} ({self.user.username})"
+
+
+class AnonymousText(models.Model):
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
