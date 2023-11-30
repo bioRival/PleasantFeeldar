@@ -100,10 +100,22 @@ def get_videos(emotion_id):
     return result
 
 
-def get_top3_emotions(content):
+def get_top3_emotions(video_id):
     """ Picks 3 top emotions from a given video, returns dictionary {name: amount} """
-    # Needs development
-    return False
+    videoT = Content.objects.get(youtube_id=video_id)
+    emotions = {
+            'funny': videoT.emotion_funny,
+            'cute': videoT.emotion_cute,
+            'sad': videoT.emotion_sad,
+            'sexy': videoT.emotion_sexy,
+            'scary': videoT.emotion_scary,
+            'awkward': videoT.emotion_awkward,
+            'nostalgic': videoT.emotion_nostalgic,
+            'angry': videoT.emotion_angry,
+        }
+    sorted_emotions = sorted(emotions.items(), key=lambda x: x[1], reverse=True)
+    top3_emotions = dict(sorted_emotions[:3])
+    return top3_emotions
 
 
 def update_bot(request):

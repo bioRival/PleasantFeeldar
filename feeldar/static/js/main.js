@@ -336,17 +336,6 @@ $(document).ready(function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
 // Unused
 function saveEmotion(emotion_id, video_url) {
     var emotion = emotion_id;
