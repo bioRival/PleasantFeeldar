@@ -296,12 +296,14 @@ $(document).ready(function () {
     const ratingItems = [];
     Object.keys(top_emotions).forEach(function (emotion) {
         const count = top_emotions[emotion];
-        ratingItems.push(`
+        if (count > 0) {
+            ratingItems.push(`
             <div class="rating-item">
                 <span>${count}</span>
                 <div class="emotion-${emotion.toLowerCase()}"></div>
             </div>
         `);
+        }
     });
     return ratingItems.join('');
 }
