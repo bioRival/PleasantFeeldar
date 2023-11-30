@@ -43,7 +43,7 @@ def get_random_texts():
     return random.sample(all_texts, min(3, len(all_texts))) if all_texts else []
 
 def contains_hate_speech(text):
-    hate_words = core.filter_words.hate_words  # Добавьте сюда запрещенные слова
+    hate_words = core.filter_words.hate_words
     for word in hate_words:
         if re.search(fr'\b{word}\b', text, flags=re.IGNORECASE):
             return True
