@@ -131,6 +131,7 @@ def update_bot(request):
             contents.append({
                 'youtube_id': content.youtube_id, 
                 'title': content.title,
+                'top_emotions': get_top3_emotions(content.youtube_id),
             })
 
         return JsonResponse({'contents': contents}, status=200)

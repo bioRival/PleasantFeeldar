@@ -282,14 +282,7 @@ $(document).ready(function () {
                         <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/${video.youtube_id}')">
                             <img src='https://i.ytimg.com/vi/${video.youtube_id}/mqdefault.jpg' alt="">
                             <div class="sub-rating">
-                            <div class="rating-item">
-                                <span>12</span>
-                                <div class="emotion-funny"></div>
-                            </div>
-                            <div class="rating-item">
-                                <span>8</span>
-                                <div class="emotion-sad"></div>
-                            </div>
+                            ${getRatingItems(video.top_emotions)}
                             </div>
                             <h4>${video.title}</h4>
                         </div>
@@ -298,6 +291,22 @@ $(document).ready(function () {
             }
         });
     }
+
+    function getRatingItems(top_emotions) {
+    const ratingItems = [];
+    Object.keys(top_emotions).forEach(function (emotion) {
+        const count = top_emotions[emotion];
+        if (count > 0) {
+            ratingItems.push(`
+            <div class="rating-item">
+                <span>${count}</span>
+                <div class="emotion-${emotion.toLowerCase()}"></div>
+            </div>
+        `);
+        }
+    });
+    return ratingItems.join('');
+}
     
     // Pick-more-button, uses stored emotion_id to pick 5 more videos
     $('.site-main .chat-bot-area .snack-pick .chat-bot-menu .pick-more-button').on('click', function () {
