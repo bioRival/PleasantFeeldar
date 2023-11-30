@@ -97,3 +97,10 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "Helvetica";
+    src: url(../fonts/HelveticaBold_0.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

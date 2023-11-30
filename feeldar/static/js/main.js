@@ -137,6 +137,20 @@ $(document).ready(function () {
         duplicated: true,
         startVisible: true,
     });
+
+    $('.site-main .banner-area .marquee-about-me-red1').marquee({
+        //duration in milliseconds of the marquee
+        duration: 50000,
+        //gap in pixels between the tickers
+        gap: 0,
+        //time in milliseconds before the marquee will start animating
+        delayBeforeStart: 0,
+        //'left' or 'right'
+        direction: 'right',
+        //true or false - should the marquee be duplicated to show an effect of continues flow
+        duplicated: true,
+        startVisible: true,
+    });
     // =============================================================
     // END MAIN PAGE
 
