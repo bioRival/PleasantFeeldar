@@ -1,3 +1,5 @@
+import re
+import core.filter_words
 from django.db.models import Count
 from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect
@@ -24,20 +26,28 @@ def merch(request):
 
 def about_me(request):
     form = AnonymousTextForm()
-
-    # Получение всех текстов из базы данных
-    all_texts = list(AnonymousText.objects.all())
-
-    # Получение случайных текстов
-    random_texts = random.sample(all_texts, min(3, len(all_texts))) if all_texts else []
+    random_texts = get_random_texts()
 
     if request.method == 'POST':
         form = AnonymousTextForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('about_me')
+            text = form.cleaned_data['text']
+            if not contains_hate_speech(text):
+                form.save()
+                return redirect('about_me')
 
     return render(request, 'about-me.html', {'form': form, 'texts': random_texts})
+
+def get_random_texts():
+    all_texts = list(AnonymousText.objects.all())
+    return random.sample(all_texts, min(3, len(all_texts))) if all_texts else []
+
+def contains_hate_speech(text):
+    hate_words = core.filter_words.hate_words
+    for word in hate_words:
+        if re.search(fr'\b{word}\b', text, flags=re.IGNORECASE):
+            return True
+    return False
 
 
 def list_boxes(request):
