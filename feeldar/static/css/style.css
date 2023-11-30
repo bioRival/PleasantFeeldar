@@ -750,12 +750,12 @@
 
     color: var(--pink-color);
     font-family: Druk Cyr;
-    font-size: 5.42675rem;
+    font-size: 4.5rem;
     font-style: normal;
     font-weight: 500;
     line-height: 98.858%; /* 5.36481rem */
     letter-spacing: 0.21706rem;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: center;
 }
 
