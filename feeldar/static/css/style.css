@@ -1024,7 +1024,7 @@
 
 .footer-area .marquee-area .footer-yellow-line-wrapper {
     position: absolute;
-    top: -.5rem;
+    top: -.5rem; left: -.2rem;
     transform: skewY(3deg);
     width: 100%;
     background-color: var(--yellow-color);
@@ -1068,8 +1068,6 @@
 
 .site-main .banner-area .marquee-about-me-yellow-wrapper .marquee-about-me-yellow {
     width: 200rem;
-    
-    
     padding: 0rem 0rem;
     overflow: hidden;
 
@@ -1190,7 +1188,7 @@
 
 .site-main .banner-area .marquee-about-me-wrapper1 {
     position: absolute;
-    top: 54rem; left: -.3rem;
+    top: 54rem; left: -.4rem;
     width: 100%;
     transform: skewY(11deg);
     background-color: var(--red-color);
@@ -1356,6 +1354,7 @@
 .site-main .anon-box-area .pink-smile-img {
     position: absolute;
     bottom: -7rem; left: 30rem;
+    z-index: 3;
     opacity: .5;
 }
 /* ========================================================================= */
@@ -1365,115 +1364,76 @@
 /* ========================================================================= */
 .site-main .quiz-area {
     min-height: 70rem;
-    padding-top: 10rem;
-
-    background: url(../img/target-bg.png) repeat-y;
-    background-size: 1920px;
-    background-position-x: center;
+    background-color: var(--black-color);
 }
 
-.site-main .quiz-area .quiz-title p {
-    color: #000;
-    font-family: Inter;
-    font-size: 3rem;
+.site-main .quiz-area .quiz-banner {
+    position: relative;
+    z-index: 0;
+    height: 64rem;
+    padding-top: 24.75rem;
+    background: url(../img/banners/quiz-banner.png) no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-color: var(--gray-color);
+}
+
+.site-main .quiz-area .quiz-banner .quiz-banner-text {
+    position: relative;
+    width: 100%;
+    padding: 0.8rem 4rem 4.5rem 4.3rem;
+    background-color: var(--black-color);
+
+    color: #FFF;
+    font-family: Druk Cyr;
+    font-size: 6rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
+    letter-spacing: 0.06rem;
 }
 
-.site-main .quiz-area .quiz-sub-title {
-    float: right;
-    padding-right: 12rem;
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+.site-main .quiz-area .quiz-banner .quiz-banner-text img {
+    position: absolute;
+    top: -5rem; left: -5rem;
 }
 
-.site-main .quiz-area .quiz-sub-title h2 {
-    color: #000;
-    font-family: var(--danger);
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.site-main .quiz-area .marquee-about-me-wrapper2 {
+    position: absolute;
+    bottom: 0rem; left: -.3rem;
+    width: 100%;
+    transform: skewY(-10deg);
+    background-color: var(--red-color);
 }
 
-.site-main .quiz-area .quiz-question p {
-    color: #000;
-    font-family: Inter;
+.site-main .quiz-area .marquee-about-me-red2 {
+    transform: skew(10deg);
+
+    color: #FFF;
+    text-align: center;
+    font-family: Futura PT Cond;
     font-size: 2.25rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 800;
     line-height: normal;
-
-    text-align: center;
+    text-wrap: nowrap;
+    overflow: hidden;
+    user-select: none;
 }
 
-.site-main .quiz-area .quiz-choices {
-    display: flex;
-    justify-content: space-between;
+.site-main .quiz-area .marquee-about-me-red2 span {
+    padding: 0 2.2rem;
 }
 
-.site-main .quiz-area .quiz-choices .choice-unit {
-    padding: 1rem;
-}
 
-.site-main .quiz-area .quiz-choices .choice-unit .choice-pic {
-    box-sizing: border-box;
-    height: 15rem;
-    width: 19rem;
-
-    margin-top: 1.5rem;
-    padding: 1rem 1rem;
-
-    background-color: #D9D9D9;
-    border-radius: 15px;
-}
-
-.site-main .quiz-area .quiz-choices .choice-unit .choice-text {
-    box-sizing: border-box;
-    display: inline-flex;
-    height: 5rem;
-    width: 19rem;
-
-    margin-top: 1.5rem;
-
-    text-align: center;
-}
-
-.site-main .quiz-area .quiz-result {
-    padding: 9rem 0 12rem 0;
-    text-align: right;
-}
-
-.site-main .quiz-area .quiz-result h1 {
-    margin-right: 16rem;
-
-    color: #000;
-    font-family: var(--danger);
-    font-size: 5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    transform: rotate(-0.888deg);
-}
-
-.site-main .quiz-area .quiz-result p {
-    margin-top: 4rem;
-
-    color: #000;
-    font-family: Inter;
-    font-size: 2.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    transform: rotate(-4.134deg);
-}
-
+/* Quiz Box subarea */
+/* ========================= */
 .site-main .quiz-area .quiz-main-container {
-    height: 26rem;
+    position: relative;
+    height: 76rem;
 }
+/* ========================= */
+/* End Quiz Box subarea */
 /* ========================================================================= */
 /* End Quiz Area */
 
