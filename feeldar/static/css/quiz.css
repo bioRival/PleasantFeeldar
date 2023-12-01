@@ -49,21 +49,31 @@
 }
 
 .start_btn button{
-    font-size: 25px;
-    font-weight: 500;
-    color: #a75cf1;
-    padding: 15px 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background: #fff;
+    display: inline-flex;
+    padding: 1.0625rem 1.75rem 1.8125rem 1.875rem;
+    justify-content: center;
+    align-items: center;
+    width: 32rem;
+    height: 7.5rem;
+    background-color: var(--red-color);
     cursor: pointer;
+
+    color: #FFF;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 .info_box {
-    width: 540px;
-    background: #fff;
-    border-radius: 5px;
+    /* width: 540px; */
+    width: 40.625rem;
+    /* height: 34.5rem; */
+    background-color: var(--black-color);
+    border: 1px solid var(--red-color);
+    border-radius: 10px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
@@ -74,12 +84,17 @@
     height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
-    padding: 0 30px;
-    border-radius: 5px 5px 0 0;
-    font-size: 20px;
-    font-weight: 600;
+
+    color: #FFF;
+    font-family: Druk Cyr;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.14rem;
 }
 
 .info_box .info-list{
@@ -88,12 +103,19 @@
 
 .info_box .info-list .info{
     margin: 5px 0;
-    font-size: 17px;
+
+    color: #fff;
+    text-align: left;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .info_box .info-list .info span{
     font-weight: 600;
-    color: #8d34e4;
+    color: var(--red-color);
 }
 .info_box .buttons{
     height: 60px;
@@ -101,27 +123,29 @@
     align-items: center;
     justify-content: flex-end;
     padding: 0 30px;
-    border-top: 1px solid lightgrey;
 }
 
 .info_box .buttons button{
     margin: 0 5px;
     height: 40px;
     width: 110px;
-    font-size: 16px;
-    font-weight: 500;
     cursor: pointer;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #1e1726;
     transition: all 0.3s ease;
+
+    color: #FFF;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 .quiz_box{
     width: 550px;
-    background: #fff;
-    border-radius: 5px;
+    background: var(--black-color);
+    border: 1px solid var(--red-color);
+    border-radius: 10px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
@@ -372,26 +396,25 @@ section .option_list .option .icon{
     cursor: pointer;
     border: none;
     outline: none;
-    border-radius: 5px;
-    border: 1px solid #ae5adb;
     transition: all 0.3s ease;
 }
 
 .buttons button.restart{
     color: #fff;
-    background: #ae5adb;
+    background: var(--red-color);
 }
 
 .buttons button.restart:hover{
-    background: #bb86f7;
+    color: var(--black-color);
+    background: var(--red-color-hover);
 }
 
 .buttons button.quit{
-    color: #ae5adb;
-    background: #fff;
+    color: var(--black-color);
+    background: var(--red-color-hover);
 }
 
 .buttons button.quit:hover{
     color: #fff;
-    background: #ae5adb;
+    background: var(--red-color);
 }
