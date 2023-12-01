@@ -4,56 +4,6 @@
 <title>Emotion Player</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('.emotion-btn').on('click', function(){
-            var emotion_id = $(this).data('emotion-id');
-            $.ajax({
-                url: 'update_bot',
-                type: 'GET',
-                data: {'emotion_id': emotion_id},
-                success: function(response){
-                    $('#video-list').empty();
-                    response.contents.forEach(function(video){
-                        var videoUrl = 'https://www.youtube.com/embed/' + video.url;
-                        var imgUrl = 'https://img.youtube.com/vi/' + video.url + '/mqdefault.jpg';
-                        $('#video-list').append('<div><h3>' + video.url +'</h3><img src="' + imgUrl + '" width="320" height="180" onclick="openVideo(\'' + video.url + '\')"></div>');
-                    });
-                }
-            });
-        });
-    });
-
-    function openVideo(videoUrl, emotionCount, emotionNames) {
-    $('#video-list').empty();
-    var iframeUrl = '//www.youtube.com/embed/' + videoUrl;
-    var videoHtml = `
-        <div>
-            <iframe src="${iframeUrl}" frameborder="0" allowfullscreen width="882" height="501"></iframe>
-            <form>
-            {% for emotion in emotions %}
-            <button class="emotion-btn2" data-emotion="{{ emotion.name }}">{{ emotion.name }}</button>
-            {% endfor %}
-            </form>
-        </div>`;
-    $('#video-list').append(videoHtml);
-
-    $('.emotion-btn2').click(function() {
-                var emotion = $(this).data('emotion');
-                var videoTitle = videoUrl.split('/').pop();
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'save_emotion/',
-                    data: {
-                        'emotion': emotion,
-                        'videoTitle': videoTitle
-                    },
-                    success: function(response) {
-                        // Действия после сохранения оценки видео
-                    }
-                });
-            });
-}
 </script>
 </head>
 <body>

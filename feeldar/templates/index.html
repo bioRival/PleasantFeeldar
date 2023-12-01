@@ -1,7 +1,6 @@
 {% extends 'default.html' %}
 
 {% load static %}
-
 {% block css_plugin%}
   <!-- Саша сюда вставляй ссылку на свой CSS -->
 {% endblock  %}
@@ -164,38 +163,12 @@
               allowfullscreen>
               </iframe>
               <div class="rating">
-                <button class="rating-item rated">
-                  <span>10</span>
-                  <span class="emotion-funny"></span>
-                </button>
-                <button class="rating-item rated active">
-                  <span>5</span>
-                  <span class="emotion-cute"></span>
-                </button>
-                <button class="rating-item rated">
-                  <span>3</span>
-                  <span class="emotion-sad"></span>
-                </button>
-                <button class="rating-item rated">
-                  <span>1</span>
-                  <span class="emotion-sexy"></span>
-                </button>
-                <button class="rating-item">
-                  <span></span>
-                  <span class="emotion-scary"></span>
-                </button>
-                <button class="rating-item">
-                  <span></span>
-                  <span class="emotion-awkward"></span>
-                </button>
-                <button class="rating-item">
-                  <span></span>
-                  <span class="emotion-angry"></span>
-                </button>
-                <button class="rating-item">
-                  <span></span>
-                  <span class="emotion-nostalgic"></span>
-                </button>
+                  {% for emotion in emotions %}
+                      <button class="rating-item" data-emotion-id="{{ emotion.codename }}">
+                      <span>5</span>
+                      <span class="emotion-{{ emotion.codename }}"></span>
+                      </button>
+                  {% endfor %}
               </div>
             </div>
 

@@ -1,5 +1,8 @@
 import re
-import core.filter_words
+
+from django.views.decorators.csrf import csrf_exempt
+
+from .filter_words import hate_words
 from django.db.models import Count
 from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect
@@ -16,7 +19,7 @@ import random
 def index(request):
     """ View for Home Page """
     emotions = Emotion.objects.all()
-    return render(request, 'index.html',{'emotions': emotions})
+    return render(request, 'index.html', {'emotions': emotions})
 
 
 def merch(request):
@@ -38,13 +41,15 @@ def about_me(request):
 
     return render(request, 'about-me.html', {'form': form, 'texts': random_texts})
 
+
 def get_random_texts():
     all_texts = list(AnonymousText.objects.all())
     return random.sample(all_texts, min(3, len(all_texts))) if all_texts else []
 
+
 def contains_hate_speech(text):
-    hate_words = core.filter_words.hate_words
-    for word in hate_words:
+    hate_words2 = hate_words
+    for word in hate_words2:
         if re.search(fr'\b{word}\b', text, flags=re.IGNORECASE):
             return True
     return False
@@ -101,9 +106,6 @@ def video_details(request, video_id):
     return render(request, 'core/video_details.html', {'video': video, 'most_common_emotion': most_common_emotion})
 
 
-
-
-
 # Chat-bot functions
 # =========================================================================================
 def get_videos(emotion_id):
@@ -121,18 +123,33 @@ def get_top3_emotions(video_id):
     """ Picks 3 top emotions from a given video, returns dictionary {name: amount} """
     videoT = Content.objects.get(youtube_id=video_id)
     emotions = {
-            'funny': videoT.emotion_funny,
-            'cute': videoT.emotion_cute,
-            'sad': videoT.emotion_sad,
-            'sexy': videoT.emotion_sexy,
-            'scary': videoT.emotion_scary,
-            'awkward': videoT.emotion_awkward,
-            'nostalgic': videoT.emotion_nostalgic,
-            'angry': videoT.emotion_angry,
-        }
+        'funny': videoT.emotion_funny,
+        'cute': videoT.emotion_cute,
+        'sad': videoT.emotion_sad,
+        'sexy': videoT.emotion_sexy,
+        'scary': videoT.emotion_scary,
+        'awkward': videoT.emotion_awkward,
+        'nostalgic': videoT.emotion_nostalgic,
+        'angry': videoT.emotion_angry,
+    }
     sorted_emotions = sorted(emotions.items(), key=lambda x: x[1], reverse=True)
     top3_emotions = dict(sorted_emotions[:3])
     return top3_emotions
+
+
+def get_single_video_emotions(video_id):
+    videoT = Content.objects.get(youtube_id=video_id)
+    emotions_video = {
+        'funny': videoT.emotion_funny,
+        'cute': videoT.emotion_cute,
+        'sad': videoT.emotion_sad,
+        'sexy': videoT.emotion_sexy,
+        'scary': videoT.emotion_scary,
+        'awkward': videoT.emotion_awkward,
+        'nostalgic': videoT.emotion_nostalgic,
+        'angry': videoT.emotion_angry,
+    }
+    return emotions_video
 
 
 def update_bot(request):
@@ -146,7 +163,7 @@ def update_bot(request):
         contents = []
         for content in content_list:
             contents.append({
-                'youtube_id': content.youtube_id, 
+                'youtube_id': content.youtube_id,
                 'title': content.title,
                 'top_emotions': get_top3_emotions(content.youtube_id),
             })
@@ -156,21 +173,52 @@ def update_bot(request):
         return JsonResponse({}, status=400)
 
 
-@login_required
+@csrf_exempt
 def save_emotion(request):
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
-        emotion_name = request.POST.get('emotion')
-        video_title = request.POST.get('videoTitle')
-        emotion = Emotion.objects.get(name=emotion_name)
-        video = Content.objects.get(title=video_title)
-        user = request.user
+    if request.method == 'POST':
+        emotion_name = request.POST.get('emotion_id')
+        video_id = request.POST.get('video_id')
+        user_id = request.user.id
 
-        content_emotion = ContentEmotion(video=video, emotion=emotion, user=user)
-        content_emotion.save()
+        try:
+            emotion = Emotion.objects.get(codename=emotion_name)
+            video = Content.objects.get(youtube_id=video_id)
 
-        return HttpResponse("Success")
+            content_emotion = ContentEmotion.objects.create(
+                video_id=video.id,
+                emotion_id=emotion.id,
+                user_id=user_id
+            )
+
+            content = Content.objects.get(youtube_id=video_id)
+
+            # Увеличиваем значение параметра соответствующей эмоции на 1
+            if emotion.codename == 'funny':
+                content.emotion_funny += 1
+            elif emotion.codename == 'cute':
+                content.emotion_cute += 1
+            elif emotion.codename == 'sad':
+                content.emotion_sad += 1
+            elif emotion.codename == 'sexy':
+                content.emotion_sexy += 1
+            elif emotion.codename == 'scary':
+                content.emotion_scary += 1
+            elif emotion.codename == 'awkward':
+                content.emotion_awkward += 1
+            elif emotion.codename == 'nostalgic':
+                content.emotion_nostalgic += 1
+            elif emotion.codename == 'angry':
+                content.emotion_angry += 1
+
+            content.save()
+
+            return JsonResponse({'success': True})
+
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+
     else:
-        return HttpResponseBadRequest()
-    
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
+
 # =========================================================================================
 # End Chat-bot Functions
