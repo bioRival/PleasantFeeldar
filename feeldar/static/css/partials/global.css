@@ -144,6 +144,28 @@ header {
 
 
 
+/* Buttons */
+.pleasant-btn {
+    background-color: var(--red-color);
+    
+    color: #FFF;
+    text-align: center;
+    font-family: Futura PT Cond Medium Italic;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.pleasant-btn:hover {
+    background-color: var(--red-color-hover1);
+}
+
+
+
+
+
+
 
 /* Emotions Emojis */
 .emotion-funny::before {

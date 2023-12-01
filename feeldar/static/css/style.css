@@ -1437,10 +1437,27 @@
 /* ========================= */
 .site-main .quiz-area .quiz-main-container {
     position: relative;
-    height: 76rem;
+    height: 50rem;
 }
 /* ========================= */
 /* End Quiz Box subarea */
+
+.site-main .quiz-area .quiz-mini-footer {
+    display: flex;
+    padding: 1.8rem 5rem;
+    justify-content: flex-end;
+    align-items: center;
+    background: var(--pink-color);
+    
+    color: var(--black-color);
+    font-family: var(--danger);
+    font-size: 40px;
+    font-style: normal;
+    text-align: right;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 11.6px;
+}
 /* ========================================================================= */
 /* End Quiz Area */
 
