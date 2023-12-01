@@ -2,11 +2,12 @@ from django.conf import settings
 from django.template.context_processors import static
 from django.urls import path
 from . import views
+from .views import about_me
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('merch', views.merch, name='merch'),
-    path('about-me', views.about_me, name='about_me'),
+    path('about-me/', about_me, name='about_me'),
     path('list-boxes/', views.list_boxes, name='list-boxes'),
 
 
