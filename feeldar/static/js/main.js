@@ -34,7 +34,9 @@ function showPickMode() {
 
 // Changes iframe source as given
 function openVideo(videoUrl) {
+    // Clears all buttons of active class
     $('.site-main .chat-bot-area .youtube-screen .rating .rating-item').removeClass('active');
+
     showVideoMode();
     $('.site-main .chat-bot-area .youtube-screen .youtube-iframe').attr("src", videoUrl);
 }
