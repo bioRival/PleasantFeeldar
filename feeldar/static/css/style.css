@@ -607,10 +607,17 @@
     font-weight: 800;
     line-height: normal;
     opacity: 0.6;
+    border-radius: 15px;
 }
 
 .site-main .chat-bot-area .youtube-screen .rating .rating-item.rated {
     opacity: 1;
+}
+
+.site-main .chat-bot-area .youtube-screen .rating .rating-item.active {
+    opacity: 1;
+    background-color: rgb(74, 16, 7);
+    outline: var(--red-color) solid 1px;
 }
 
 .site-main .chat-bot-area .youtube-screen .rating .rating-item:hover {

@@ -34,6 +34,7 @@ function showPickMode() {
 
 // Changes iframe source as given
 function openVideo(videoUrl) {
+    $('.site-main .chat-bot-area .youtube-screen .rating .rating-item').removeClass('active');
     showVideoMode();
     $('.site-main .chat-bot-area .youtube-screen .youtube-iframe').attr("src", videoUrl);
 }
@@ -378,6 +379,8 @@ $(document).ready(function () {
 $(document).on('click', '.rating-item', function(event) {
     event.preventDefault();
 
+    $(this).addClass('active');
+    
     var emotionId = $(this).attr('data-emotion-id');
     var videoId = $('.youtube-screen').find('iframe').attr('src').split('/')[4];
 

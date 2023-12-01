@@ -165,7 +165,9 @@
               </iframe>
               <div class="rating">
                   {% for emotion in emotions %}
-                      <button class="rating-item" data-emotion-id="{{ emotion.codename }}">
+                      <button class="rating-item" 
+                        data-emotion-id="{{ emotion.codename }}"
+                        title="{{ emotion.name|capfirst }}">
                       <span class="emotion-{{ emotion.codename }}"></span>
                       </button>
                   {% endfor %}
