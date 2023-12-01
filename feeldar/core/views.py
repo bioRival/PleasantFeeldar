@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET
-
+from django.urls import reverse
 from .forms import AnonymousTextForm
 from .models import Content, Emotion, ContentEmotion, AnonymousText, Snacks
 from collections import Counter
@@ -26,7 +26,7 @@ def merch(request):
     return render(request, 'merch.html')
 
 
-def about_me(request):
+def about_me(request, anchor=None):
     form = AnonymousTextForm()
     random_texts = get_random_texts()
 
@@ -36,9 +36,9 @@ def about_me(request):
             text = form.cleaned_data['text']
             if not contains_hate_speech(text):
                 form.save()
-                return redirect('about_me')
+                return redirect(reverse('about_me') + '#anon-form')
 
-    return render(request, 'about-me.html', {'form': form, 'texts': random_texts})
+    return render(request, 'about-me.html', {'form': form, 'texts': random_texts, 'anchor': anchor})
 
 
 def get_random_texts():
