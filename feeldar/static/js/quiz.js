@@ -10,6 +10,11 @@ const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
+const img_box = document.querySelector(".img_box");
+const image = document.querySelector(".img_box .correct-img");
+const img_text = document.querySelector(".img_box .img-text");
+
+
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
@@ -28,6 +33,7 @@ continue_btn.onclick = ()=>{
     queCounter(1); //passing 1 parameter to queCounter
     startTimer(15); //calling startTimer function
     startTimerLine(0); //calling startTimerLine function
+    changeImg(1); // set image
 }
 
 let timeValue =  15;
@@ -40,6 +46,34 @@ let widthValue = 0;
 
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
+
+// Changing Images
+function changeImg(que_numb) {
+  image.src = `${STATIC_URL}img/quiz/${que_numb}.png`;
+  let img_lines = [
+    'Curtis James Jackson III, 50 Cent',
+    'Get rich or die trying',
+    'Званый ужин',
+    'DOTA 2',
+    'И это хорошо!',
+    'Инженер по информационным технологиям',
+    'Мама <i class="fa-solid fa-heart"></i>',
+    'ПОЛОВИНКИ. ЭГОИСТИЧНАЯ ТОЛСТУШКА - 7,8 млн.',
+    'Вирус',
+    'Я - ленивый',
+  ];
+  img_text.innerHTML = img_lines[que_numb-1];
+}
+
+function showImg() {
+  quiz_box.classList.add('moveQuiz');
+  img_box.classList.add('activeImg');
+}
+
+function hideImg() {
+  img_box.classList.remove('activeImg');
+  quiz_box.classList.remove('moveQuiz');
+}
 
 // if restartQuiz button clicked
 restart_quiz.onclick = ()=>{
@@ -58,6 +92,7 @@ restart_quiz.onclick = ()=>{
     startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Осталось Времени"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
+    changeImg(que_numb); // set image
 }
 
 // if quitQuiz button clicked
@@ -81,12 +116,15 @@ next_btn.onclick = ()=>{
         startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Осталось Времени"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
+        hideImg();
+        changeImg(que_numb);
     }else{
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
     }
 }
+
 
 // getting questions and options from array
 function showQuetions(index){
@@ -143,9 +181,11 @@ function optionSelected(answer){
         option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
     }
     next_btn.classList.add("show"); //show the next button if user selected any option
+    showImg();
 }
 
 function showResult(){
+    hideImg();
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
@@ -189,19 +229,20 @@ function startTimer(time){
                 option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
             }
             next_btn.classList.add("show"); //show the next button if user selected any option
+            showImg();
         }
     }
 }
 
 function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
-    function timer(){
-        time += 1; //upgrading time value with 1
-        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
-            clearInterval(counterLine); //clear counterLine
-        }
-    }
+  counterLine = setInterval(timer, 25);
+  function timer(){
+      time += 1; //upgrading time value with 1
+      time_line.style.width = time + "px"; //increasing width of time_line with px by time value
+      if(time > 637){ //if time value is greater than 549
+          clearInterval(counterLine); //clear counterLine
+      }
+  }
 }
 
 function queCounter(index){
@@ -248,10 +289,10 @@ let questions = [
     {
     numb: 4,
     question: "Моя любимая игра",
-    answer: "Defense of the Ancients (DotA)",
+    answer: "Defense of the Ancients (DotA 2)",
     options: [
       "League of Legends (LOL)",
-      "Defense of the Ancients (DotA)",
+      "Defense of the Ancients (DotA 2)",
       "Heroes of the Storm",
       "Smite"
     ]

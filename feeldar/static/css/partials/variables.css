@@ -18,6 +18,7 @@ html, body {
     --pink-color: #F162D8;
     --yellow-color: #FAED5B;
     --red-color-hover: rgb(226, 120, 48);
+    --red-color-hover2: #661403;
 
     /*   Effects */
     --box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
