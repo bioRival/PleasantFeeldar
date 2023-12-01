@@ -5,6 +5,7 @@ from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET
 
 from .forms import AnonymousTextForm
@@ -156,21 +157,51 @@ def update_bot(request):
         return JsonResponse({}, status=400)
 
 
-@login_required
+@csrf_exempt
 def save_emotion(request):
-    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
-        emotion_name = request.POST.get('emotion')
-        video_title = request.POST.get('videoTitle')
-        emotion = Emotion.objects.get(name=emotion_name)
-        video = Content.objects.get(title=video_title)
-        user = request.user
+    if request.method == 'POST':
+        emotion_name = request.POST.get('emotion_id')
+        video_id = request.POST.get('video_id')
+        user_id = request.user.id
 
-        content_emotion = ContentEmotion(video=video, emotion=emotion, user=user)
-        content_emotion.save()
+        try:
+            emotion = Emotion.objects.get(codename=emotion_name)
+            video = Content.objects.get(youtube_id=video_id)
 
-        return HttpResponse("Success")
+            content_emotion = ContentEmotion.objects.create(
+                video_id=video.id,
+                emotion_id=emotion.id,
+                user_id=user_id
+            )
+
+            content = Content.objects.get(youtube_id=video_id)
+
+            # Увеличиваем значение параметра соответствующей эмоции на 1
+            if emotion.codename == 'funny':
+                content.emotion_funny += 1
+            elif emotion.codename == 'cute':
+                content.emotion_cute += 1
+            elif emotion.codename == 'sad':
+                content.emotion_sad += 1
+            elif emotion.codename == 'sexy':
+                content.emotion_sexy += 1
+            elif emotion.codename == 'scary':
+                content.emotion_scary += 1
+            elif emotion.codename == 'awkward':
+                content.emotion_awkward += 1
+            elif emotion.codename == 'nostalgic':
+                content.emotion_nostalgic += 1
+            elif emotion.codename == 'angry':
+                content.emotion_angry += 1
+
+            content.save()
+
+            return JsonResponse({'success': True})
+
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+
     else:
-        return HttpResponseBadRequest()
-    
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
 # =========================================================================================
 # End Chat-bot Functions

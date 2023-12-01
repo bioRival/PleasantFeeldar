@@ -376,19 +376,31 @@ $(document).ready(function () {
 });
 
 
-// Unused
-function saveEmotion(emotion_id, video_url) {
-    var emotion = emotion_id;
-    var videoTitle = video_url.split('/').pop();
+$(document).on('click', '.rating-item', function(event) {
+    event.preventDefault();
+
+    var emotionId = $(this).attr('data-emotion-id');
+    var videoId = $('.youtube-screen').find('iframe').attr('src').split('/')[4];
+
     $.ajax({
         type: 'POST',
-        url: 'save_emotion',
+        url: '/save_emotion/',
         data: {
-            'emotion': emotion,
-            'videoTitle': videoTitle
+            'emotion_id': emotionId,
+            'video_id': videoId
         },
-        success: function (response) {
-        }
+        success: function(response) {
+            if (response.success) {
+                console.log('Данные успешно сохранены!');
+                // Дополнительная логика после успешного сохранения данных
+            } else {
+                console.error('Ошибка при сохранении данных:', response.error);
+                // Обработка ошибок
+            }
+        },
+        error: function(xhr, textStatus, errorThrown) {
+            console.error('Ошибка AJAX-запроса:', errorThrown);
+            // Обработка ошибок
+        },
     });
-}
-
+});
