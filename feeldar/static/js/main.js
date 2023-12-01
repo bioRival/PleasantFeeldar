@@ -317,7 +317,7 @@ $(document).ready(function () {
                             <img src='https://i.ytimg.com/vi/${video.youtube_id}/mqdefault.jpg' alt="">
                             <h4>${video.title}</h4>
                         </div>
-                    `);
+                        `);
                 });
             }
         });

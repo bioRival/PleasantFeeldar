@@ -18,7 +18,7 @@ def index(request):
     """ View for Home Page """
     emotions = Emotion.objects.all()
     snacks = Snacks.objects.order_by('?')[:2]
-    return render(request, 'index.html', {'emotions': emotions, 'snacks':snacks})
+    return render(request, 'index.html', {'emotions': emotions, 'snacks': snacks})
 
 
 def merch(request):
