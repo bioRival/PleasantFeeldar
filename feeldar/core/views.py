@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET
 
 from .forms import AnonymousTextForm
-from .models import Content, Emotion, ContentEmotion, AnonymousText
+from .models import Content, Emotion, ContentEmotion, AnonymousText, Snacks
 from collections import Counter
 import random
 
@@ -17,7 +17,8 @@ import random
 def index(request):
     """ View for Home Page """
     emotions = Emotion.objects.all()
-    return render(request, 'index.html',{'emotions': emotions})
+    snacks = Snacks.objects.order_by('?')[:2]
+    return render(request, 'index.html', {'emotions': emotions, 'snacks':snacks})
 
 
 def merch(request):
@@ -39,9 +40,11 @@ def about_me(request):
 
     return render(request, 'about-me.html', {'form': form, 'texts': random_texts})
 
+
 def get_random_texts():
     all_texts = list(AnonymousText.objects.all())
     return random.sample(all_texts, min(3, len(all_texts))) if all_texts else []
+
 
 def contains_hate_speech(text):
     hate_words = core.filter_words.hate_words
@@ -102,9 +105,6 @@ def video_details(request, video_id):
     return render(request, 'core/video_details.html', {'video': video, 'most_common_emotion': most_common_emotion})
 
 
-
-
-
 # Chat-bot functions
 # =========================================================================================
 def get_videos(emotion_id):
@@ -122,15 +122,15 @@ def get_top3_emotions(video_id):
     """ Picks 3 top emotions from a given video, returns dictionary {name: amount} """
     videoT = Content.objects.get(youtube_id=video_id)
     emotions = {
-            'funny': videoT.emotion_funny,
-            'cute': videoT.emotion_cute,
-            'sad': videoT.emotion_sad,
-            'sexy': videoT.emotion_sexy,
-            'scary': videoT.emotion_scary,
-            'awkward': videoT.emotion_awkward,
-            'nostalgic': videoT.emotion_nostalgic,
-            'angry': videoT.emotion_angry,
-        }
+        'funny': videoT.emotion_funny,
+        'cute': videoT.emotion_cute,
+        'sad': videoT.emotion_sad,
+        'sexy': videoT.emotion_sexy,
+        'scary': videoT.emotion_scary,
+        'awkward': videoT.emotion_awkward,
+        'nostalgic': videoT.emotion_nostalgic,
+        'angry': videoT.emotion_angry,
+    }
     sorted_emotions = sorted(emotions.items(), key=lambda x: x[1], reverse=True)
     top3_emotions = dict(sorted_emotions[:3])
     return top3_emotions
@@ -147,7 +147,7 @@ def update_bot(request):
         contents = []
         for content in content_list:
             contents.append({
-                'youtube_id': content.youtube_id, 
+                'youtube_id': content.youtube_id,
                 'title': content.title,
                 'top_emotions': get_top3_emotions(content.youtube_id),
             })

@@ -166,7 +166,6 @@
               <div class="rating">
                   {% for emotion in emotions %}
                       <button class="rating-item" data-emotion-id="{{ emotion.codename }}">
-                      <span>5</span>
                       <span class="emotion-{{ emotion.codename }}"></span>
                       </button>
                   {% endfor %}
@@ -252,8 +251,9 @@
                 Если будет сильно страшно, твои ногти остануться целыми
               </p>
               <div class="snack-images">
-                <img src="{% static '/img/snacks/bar1.png' %}" alt="">
-                <img src="{% static '/img/snacks/bar2.png' %}" alt="">
+                {% for snack in snacks %}
+                       <img src="{% static snack.link %}" alt="{{ snack.name }}">
+                {% endfor %}
               </div>
               <div class="chat-bot-menu">
                 <button class="back-to-pick-button d-none">Назад</button>

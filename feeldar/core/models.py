@@ -55,3 +55,8 @@ class AnonymousText(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Snacks(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    link = models.CharField(max_length=50, default="null")

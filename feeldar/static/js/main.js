@@ -312,9 +312,6 @@ $(document).ready(function () {
                     $('.site-main .chat-bot-area .video-pick').append(`
                         <div class="video-item" onclick="openVideo('https://www.youtube.com/embed/${video.youtube_id}')">
                             <img src='https://i.ytimg.com/vi/${video.youtube_id}/mqdefault.jpg' alt="">
-                            <div class="sub-rating">
-                            ${getRatingItems(video.top_emotions)}
-                            </div>
                             <h4>${video.title}</h4>
                         </div>
                     `);
@@ -322,7 +319,9 @@ $(document).ready(function () {
             }
         });
     }
-
+//<div class="sub-rating">
+                            //${getRatingItems(video.top_emotions)}
+                            //</div>
     function getRatingItems(top_emotions) {
     const ratingItems = [];
     Object.keys(top_emotions).forEach(function (emotion) {
