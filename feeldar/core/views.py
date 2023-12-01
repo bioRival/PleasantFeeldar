@@ -163,38 +163,35 @@ def save_emotion(request):
         emotion_name = request.POST.get('emotion_id')
         video_id = request.POST.get('video_id')
         user_id = request.user.id
-
         try:
             emotion = Emotion.objects.get(codename=emotion_name)
             video = Content.objects.get(youtube_id=video_id)
-
-            content_emotion = ContentEmotion.objects.create(
+            content_emotion, created = ContentEmotion.objects.get_or_create(
                 video_id=video.id,
                 emotion_id=emotion.id,
                 user_id=user_id
             )
 
-            content = Content.objects.get(youtube_id=video_id)
-
-            # Увеличиваем значение параметра соответствующей эмоции на 1
-            if emotion.codename == 'funny':
-                content.emotion_funny += 1
-            elif emotion.codename == 'cute':
-                content.emotion_cute += 1
-            elif emotion.codename == 'sad':
-                content.emotion_sad += 1
-            elif emotion.codename == 'sexy':
-                content.emotion_sexy += 1
-            elif emotion.codename == 'scary':
-                content.emotion_scary += 1
-            elif emotion.codename == 'awkward':
-                content.emotion_awkward += 1
-            elif emotion.codename == 'nostalgic':
-                content.emotion_nostalgic += 1
-            elif emotion.codename == 'angry':
-                content.emotion_angry += 1
-
-            content.save()
+            if created:
+                content = Content.objects.get(youtube_id=video_id)
+                # Увеличиваем значение параметра соответствующей эмоции на 1
+                if emotion.codename == 'funny':
+                    content.emotion_funny += 1
+                elif emotion.codename == 'cute':
+                    content.emotion_cute += 1
+                elif emotion.codename == 'sad':
+                    content.emotion_sad += 1
+                elif emotion.codename == 'sexy':
+                    content.emotion_sexy += 1
+                elif emotion.codename == 'scary':
+                    content.emotion_scary += 1
+                elif emotion.codename == 'awkward':
+                    content.emotion_awkward += 1
+                elif emotion.codename == 'nostalgic':
+                    content.emotion_nostalgic += 1
+                elif emotion.codename == 'angry':
+                    content.emotion_angry += 1
+                content.save()
 
             return JsonResponse({'success': True})
 
