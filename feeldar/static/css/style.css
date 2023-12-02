@@ -1096,7 +1096,7 @@
     text-transform: uppercase;
     user-select: none;
 
-    background: #F9ED5B;
+    background: #faed5b;
 }
 
 .site-main .banner-area .subscriber-count-container {
@@ -1500,13 +1500,19 @@
     left: -62.1rem;
     z-index: 3;
     display: flex;
+    align-items: center;
     transform: rotate(90deg);
+}
+
+.site-main .sub-menu-area .marquee-merch-yellow-wrapper img {
+    height: 4.3rem;
 }
 
 .site-main .sub-menu-area .marquee-merch-yellow-wrapper .marquee-merch-yellow {
     width: 133rem;
+    height: 4.3rem;
     
-    padding: 1rem 0rem;
+    padding: .8rem 0rem;
     overflow: hidden;
 
     color: #000;
