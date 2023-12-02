@@ -510,11 +510,14 @@ section .option_list .option .icon{
 }
 
 .buttons button.quit{
-    color: var(--black-color);
-    background: var(--red-color-hover);
+    
+    color: var(--gray-color);
+    background: transparent;
+    border: 3px solid var(--yellow-color);
+    border-radius: 15px;
 }
 
 .buttons button.quit:hover{
-    color: #fff;
-    background: var(--red-color);
+    color: var(--black-color);
+    background: var(--yellow-color);
 }

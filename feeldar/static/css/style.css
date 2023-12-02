@@ -698,6 +698,15 @@
     max-height: 200px;
 }
 
+.site-main .chat-bot-area .snack-pick .snack-images img:nth-child(1) {
+    transform: rotate(-8deg);
+}
+
+.site-main .chat-bot-area .snack-pick .snack-images img:nth-child(2) {
+    transform: rotate(6deg);
+}
+
+
 .site-main .chat-bot-area .snack-pick .chat-bot-menu {
     display: flex;
     flex-flow: row nowrap;
