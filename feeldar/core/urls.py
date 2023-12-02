@@ -19,4 +19,5 @@ urlpatterns = [
     # path('chat-bot', views.chatbot, name='chat-bot'),
     path('update_bot/', views.update_bot, name='update_bot'),
     path('save_emotion/', views.save_emotion, name='save_emotion'),
+    path('check_content_emotion/', views.check_content_emotion, name='check_content_emotion'),
 ]

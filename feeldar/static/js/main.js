@@ -34,11 +34,30 @@ function showPickMode() {
 
 // Changes iframe source as given
 function openVideo(videoUrl) {
-    // Clears all buttons of active class
-    $('.site-main .chat-bot-area .youtube-screen .rating .rating-item').removeClass('active');
+  // Удаление класса у всех кнопок
+  $('.site-main .chat-bot-area .youtube-screen .rating .rating-item').removeClass('active');
 
-    showVideoMode();
-    $('.site-main .chat-bot-area .youtube-screen .youtube-iframe').attr("src", videoUrl);
+  // Вызов функции check_content_emotion с videoUrl в качестве параметра
+  $.ajax({
+    url: '/check_content_emotion/',
+    data: { videoUrl: videoUrl },
+    dataType: 'json',
+    method: 'GET',
+    success: function(response) {
+      // Получение списка эмоций из ответа
+      var emotionButtons = response.buttons;
+      var ratingItems = document.querySelectorAll('.site-main .chat-bot-area .youtube-screen .rating .rating-item');
+      for (var i = 0; i < ratingItems.length; i++) {
+           var emotionId = ratingItems[i].getAttribute('class-changer');
+
+            if (emotionButtons.includes(emotionId)) {
+                   ratingItems[i].classList.add('active');
+            }
+      }
+      showVideoMode();
+      $('.site-main .chat-bot-area .youtube-screen .youtube-iframe').attr("src", videoUrl);
+    }
+  });
 }
 // ========================================================================================= 
 // End Chat-bot Logic part 1

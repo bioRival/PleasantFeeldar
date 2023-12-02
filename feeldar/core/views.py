@@ -200,5 +200,18 @@ def save_emotion(request):
 
     else:
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
+
+
+@csrf_exempt
+def check_content_emotion(request):
+    if request.method == 'GET':
+        user_id = request.user.id
+        videoUrl = request.GET.get('videoUrl')
+        video_id = videoUrl.split("/")[-1]
+        content = Content.objects.get(youtube_id=video_id)
+        content_emotions = ContentEmotion.objects.filter(user_id=user_id, video=content.id)
+        emotion_ids = content_emotions.values_list('emotion_id', flat=True)
+        buttons = [str(emotion_id) for emotion_id in emotion_ids]
+        return JsonResponse({'buttons': buttons})
 # =========================================================================================
 # End Chat-bot Functions
