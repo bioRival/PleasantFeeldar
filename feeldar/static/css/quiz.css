@@ -514,7 +514,7 @@ section .option_list .option .icon{
     color: var(--gray-color);
     background: transparent;
     border: 3px solid var(--yellow-color);
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 .buttons button.quit:hover{
